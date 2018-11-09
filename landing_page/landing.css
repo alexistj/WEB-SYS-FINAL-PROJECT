@@ -1,0 +1,108 @@
+
+
+body, html{
+  width:100%;
+}
+
+.apricot{
+  background-color: #f7882F;
+}
+.blueberry{
+  background-color: #687ABF;
+}
+.citrus{
+  background-color: #F7C331;
+}
+.white{
+  background-color: white;
+}
+.apple_core_text{
+  color: #DCC7AA;
+}
+.white_text{
+  color: white;
+}
+header{
+  width: 100%;
+  border-bottom: solid 1px;
+  padding: 1em 0;
+  margin-bottom: 0;
+  left: 0;
+  position: relative;
+}
+.navbar{
+  width: 90em;
+  margin: auto;
+}
+.logo{
+
+}
+.navigation{
+  float: right;
+}
+.content{
+  margin-top: 0;
+  width: 100%;
+}
+.banner{
+  margin-top: 0;
+  padding-top: 1em;
+  height: 30em;
+  width: 100%;
+  background-image: linear-gradient(to bottom right, #f7882F, #F7C331);
+}
+.banner_content{
+  width: 90em;
+  margin: auto;
+}
+.title{
+  font-size: 4em;
+  margin-bottom: 0;
+}
+.subtext{
+  margin-top: 0;
+  padding-top: 1em;
+  border-top: solid 0.5em;
+  width: 20em;
+}
+.info_title{
+  font-size: 2.5em;
+  margin-bottom: 0;
+}
+.info_subtext{
+  margin-top: 0;
+  padding-top: 1em;
+  border-top: solid 0.3em;
+  width: 20em;
+}
+.information{
+  width: 90em;
+  margin: auto;
+  height: 30em;
+  position: relative;
+  z-index: 2;
+  top: -8em;
+}
+.information_content{
+  width: 25em;
+  height: 30em;
+  padding-top: 1em;
+  padding-left: 1em;
+  float: right;
+}
+.grid{
+  width: 90em;
+  margin: auto;
+}
+.col{
+  height: 50em;
+  display: inline-block;
+  width: 30%;
+  margin: 0;
+}
+.box{
+
+}
+.middle{
+  margin: 0 5em;
+}
