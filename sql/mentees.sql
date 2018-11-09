@@ -6,5 +6,6 @@ CREATE TABLE `mentees` (
  `location` varchar(100) NOT NULL,
  `gender` varchar(100) NOT NULL,
  `picture` varchar(100) NOT NULL,
+ `password` varchar(100) NOT NULL,
  PRIMARY KEY (`id`)
 );
