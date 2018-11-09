@@ -6,6 +6,7 @@ CREATE TABLE `mentors` (
  `location` varchar(100) NOT NULL,
  `gender` varchar(100) NOT NULL,
  `picture` varchar(100) NOT NULL,
+ `password` varchar(100) NOT NULL,
  `occupation` varchar(100) NOT NULL,
  `num_mentees` int unsigned NOT NULL,
  PRIMARY KEY (`id`)
