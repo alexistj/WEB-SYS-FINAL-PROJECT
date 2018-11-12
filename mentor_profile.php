@@ -5,12 +5,13 @@ $result3 = mysql_query("SELECT * FROM member where mem_id='$id'");
 while($row3 = mysql_fetch_array($result3))
 { 
 $name=$row3['name'];
-//$lname=$row3['lname'];
 $location=$row3['location'];
 $email=$row3['email'];
 $picture=$row3['picture'];
 $gender=$row3['gender'];
-$age= $row['age'];
+$age= $row3['age'];
+$occupation= $row3['occupation'];
+$num_mentees= $row3['num_mentees'];
 }
 ?>
 
@@ -35,10 +36,6 @@ $age= $row['age'];
     <td width="82" valign="top"><div align="left">Name:</div></td>
     <td width="165" valign="top"><?php echo $name ?></td>
   </tr>
- /* <tr>
-    <td valign="top"><div align="left">LastName:</div></td>
-    <td valign="top"><?php echo $lname ?></td>
-  </tr> */
   <tr>
     <td valign="top"><div align="left">Gender:</div></td>
     <td valign="top"><?php echo $gender ?></td>
@@ -50,6 +47,15 @@ $age= $row['age'];
   <tr>
     <td valign="top"><div align="left">Email: </div></td>
     <td valign="top"><?php echo $email?></td>
+  </tr>
+  <tr>
+     <td valign="top"><div align="left">Occupation:</div></td>
+    <td valign="top"><?php echo $occupation ?></td>
+  </tr>
+    
+  <tr>
+     <td valign="top"><div align="left">Currently mentors:</div></td>
+    <td valign="top"><?php echo $num_mentees ?></td>
   </tr>
 </table>
 <p align="center"><a href="index.php"></a></p>
