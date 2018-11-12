@@ -1,122 +1,90 @@
 <!--https://www.youtube.com/watch?v=QS4LN747BXQ-->
+<!-- https://www.youtube.com/watch?v=n35Jn2nP9iU -->
 
 <?php 
-  include('functions.php'); // functions
+  //include('functions.php'); // functions
   include('config.php'); 
 ?>
 
+<!DOCTYPE HTML>  
+<html>
 <?php
 
 
+  if(isset($_POST['submit']))
+  {
+  if( !empty($_POST)){
+    $mysqli = new mysqli('localhost','root', '', 'websysproject');
 
-// define variables and set to empty values
-/*$nameErr = $emailErr = $genderErr = $websiteErr = "";
-$name = $email = $gender = $comment = $website = "";
+    date_default_timezone_set('America/New_York');
+    $date = date('m/d/Y');
+    $time = date("h:i:sa");
 
-$messageErr = $senderErr = $receiverErr = "";
-$message = $sender = $receiver = "";
+    if($mysqli->connect_error){
+      die('Connect Error: ' . $mysqli->connect_errno . ': ' . $mysqli->connect_error);
+    }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-  if (empty($_POST["message"])) {
-    $messageErr = "Message is required";
-  } else {
-    $message = test_input($_POST["message"]);
-  }
-  
-  if (empty($_POST["sender"])) {
-    $senderErr = "You ID is required";
-  } else {
-    $sender = test_input($_POST["sender"]);
-  }
-    
-  if (empty($_POST["receiver"])) {
-    $receiverErr = "The ID of the person you are sending the message to is needed";
-  } else {
-    $receiver = test_input($_POST["receiver"]);
-  }
+    $sql = "INSERT INTO websysproject.messenger (SenderID,ReceiverID,Message,Date,Time) VALUES ('{$mysqli->real_escape_string($_POST['sender'])}','{$mysqli->real_escape_string($_POST['receiver'])}','{$mysqli->real_escape_string($_POST['Message'])}','".date('c')."','".$time."'         );";
+    $insert = $mysqli->query($sql);
 
-}
+    if($insert){
+      echo "Success!";
+    } else {
+      die("Error: {$mysqli->errno} : {$mysqli->error}");
+    }
 
-function test_input($data) {
-  $data = trim($data);
-  $data = stripslashes($data);
-  $data = htmlspecialchars($data);
-  return $data;
-}*/
-
-
-
-
-$errors = array();
-$sent = false;
-
-if( ! empty($_POST)){
-  $process = process_form($_POST);
-
-  if( ! empty($process['message'])){
-    $errors[] = $process['message'];
-  } else if ( ! empty( $process['errors'])){
-    $errors = $process['errors'];
-  } else {
-    $sent = true;
+    $mysqli->close();
   }
 }
-
-
-
-
 ?>
+  <head>
+    <style>
+      .error {color: #FF0000;}
+    </style>
+  </head>
+  <body>  
 
 
 
+    <h2>Messenger Form</h2>
+    <!--<p><span class="error">* required field</span></p>-->
 
-<!DOCTYPE HTML>  
-<html>
-<head>
-<style>
-.error {color: #FF0000;}
-</style>
-</head>
-<body>  
-
+    <form class = "messageForm" method="post" action="">  
+      <!-- <?php //echo htmlspecialchars($_SERVER["PHP_SELF"]);?>-->
+      <!--Message: <input type="text" name="message">
+      <span class="error">* <?php //echo $messageErr;?></span>
+      <br><br>-->
 
 
-<h2>Messenger Form</h2>
-<!--<p><span class="error">* required field</span></p>-->
-
-<form class = "messageForm" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]);?>">  
-  <!--Message: <input type="text" name="message">
-  <span class="error">* <?php //echo $messageErr;?></span>
-  <br><br>-->
-
-
-  <label>
-    <span>Sender ID:</span>
-  </label>
-  <input id="sender" type="text" name="sender"
-  value = "<$php echo validate_input('sender'); ?>">
-  <!--<span class="error">* <?php //echo $senderErr;?></span>-->
-  <br><br>
+      <label>
+        <span>Sender ID:</span>
+      </label>
+      <input id="sender" type="text" name="sender">
+      <!-- <input id="sender" type="text" name="sender"
+      value = "<$php echo validate_input('sender'); ?>">-->
+      <!--<span class="error">* <?php //echo $senderErr;?></span>-->
+      <br><br>
 
 
-  <label>
-    <span>Receiver ID:</span>
-  </label>
-  <input id="receiver" type="text" name="receiver" 
-  value = "<$php echo validate_input('receiver'); ?>">
-  <!--<span class="error"><?php //echo $receiverErr;?></span>-->
-  <br><br>
+      <label>
+        <span>Receiver ID:</span>
+      </label>
+      <input id="receiver" type="text" name="receiver">
+      <!--<input id="receiver" type="text" name="receiver" 
+      value = "<$php echo validate_input('receiver'); ?>">-->
+      <!--<span class="error"><?php //echo $receiverErr;?></span>-->
+      <br><br>
 
-  <label>
-    <span>Message:</span>
-  </label>
-  <textarea name="Message" rows="5" cols="40" placeholder="Enter your message"></textarea>
-  <br><br>
+      <label>
+        <span>Message:</span>
+      </label>
+      <textarea id = "Message" name="Message" rows="5" cols="40" placeholder="Enter your message"></textarea>
+      <br><br>
 
-  <input id="submit" type="submit" name="submit" value="Submit">  
-</form>
+      <input id="submit" type="submit" name="submit" value="Submit">  
+    </form>
+  </body>
+  <script type ="text/javascript">
 
-
-
-</body>
+  </script>
 </html>
