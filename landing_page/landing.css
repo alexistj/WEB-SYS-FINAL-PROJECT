@@ -3,6 +3,9 @@
 body, html{
   width:100%;
 }
+body{
+  margin: 0;
+}
 
 .apricot{
   background-color: #f7882F;
@@ -27,8 +30,8 @@ header{
   border-bottom: solid 1px;
   padding: 1em 0;
   margin-bottom: 0;
-  left: 0;
-  position: relative;
+  position: fixed;
+  background-color: white;
 }
 .navbar{
   width: 90em;
@@ -42,14 +45,16 @@ header{
 }
 .content{
   margin-top: 0;
+  padding-top: 3em;
   width: 100%;
 }
 .banner{
   margin-top: 0;
   padding-top: 1em;
-  height: 30em;
-  width: 100%;
   background-image: linear-gradient(to bottom right, #f7882F, #F7C331);
+  width: 100em;
+  height: 40em;
+  margin: auto;
 }
 .banner_content{
   width: 90em;
@@ -78,31 +83,53 @@ header{
 .information{
   width: 90em;
   margin: auto;
-  height: 30em;
+  height: 25em;
   position: relative;
   z-index: 2;
-  top: -8em;
+  top: -20em;
 }
 .information_content{
-  width: 25em;
-  height: 30em;
+  width: 30%;
+  height: 100%;
   padding-top: 1em;
   padding-left: 1em;
   float: right;
 }
-.grid{
-  width: 90em;
-  margin: auto;
-}
-.col{
-  height: 50em;
-  display: inline-block;
-  width: 30%;
-  margin: 0;
-}
-.box{
+.information_photo{
 
 }
-.middle{
-  margin: 0 5em;
+.index_page_content{
+    margin: auto;
+    width: 95em;
+    padding: 3em 5em;
+}
+.index_page_row{
+    padding-top: 1em;
+    width: 100%;
+    display: block;
+    height: 20em;
+}
+.index_page_title{
+    display: inline-block;
+    width: 30%;
+    height: 20em;
+    margin: 0;
+}
+.index_title{
+    padding-left: 0.5em;
+    padding-right: 1em;
+    font-size: 4em;
+}
+.index_page_description{
+    display: inline-block;
+    box-sizing: border-box;
+    border: solid red 0.2em;
+    width: 69%;
+    height: 20em;
+    margin: 0;
+    background-color: #FFFAF0;
+}
+.index_text{
+    padding: 1em;
+    font-size: 1.5em;
 }

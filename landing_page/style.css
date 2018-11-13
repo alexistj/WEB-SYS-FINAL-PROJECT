@@ -1,0 +1,286 @@
+/* File: style.css */
+/* Purpose: stylesheet for website */
+
+/* UNIVERSAL */
+/* style implemented in more than one page */
+body{
+  margin: 0;
+}
+/* text */
+.title{
+    font-size: 5em;
+}
+.subtitle{
+    font-size: 1.5em;
+}
+.text{
+    font-size: 1.5em;
+}
+/* font style */
+
+/* text colors */
+.apricot{
+  background-color: #f7882F;
+}
+.blueberry{
+  background-color: #687ABF;
+}
+.citrus{
+  background-color: #F7C331;
+}
+
+.apple_core_text{
+  color: #DCC7AA;
+}
+.white_text{
+  color: white;
+}
+/* divs/ other elements */
+html, body{
+    width: 100%;
+    font-size: 100%;
+
+}
+#navbar{
+    height: 6vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+    margin-bottom: 0 !important;
+    margin: auto;
+}
+#content{
+    width: 120em;
+    margin-top: 6vh;
+    margin: auto;
+}
+#footer{
+    margin-top: 5em;
+    height: 10em;
+    width: 120em;
+    margin: auto;
+}
+.section{
+    width: 100%;
+}
+.text_full{
+
+}
+.remove_margin{
+    margin: 0;
+}
+
+/* background colors */
+.white_bg{
+    background-color: white;
+}
+.red_bg{
+    background-color: red;
+}
+.purple_bg{
+    background-color: purple;
+}
+.gold_bg{
+    background-color: gold;
+}
+
+/* buttons */
+
+/* parallax */
+.parallax_text{
+    width: 100%;
+    text-align: center;
+    padding-top: 22em;
+}
+.parallax_full{
+
+    width: 120rem;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    overflow-y: hidden;
+}
+/* box shadows */
+.shadow_bottom{
+    box-shadow: 0 4px 2px -2px gray;
+}
+.shadow_top{
+    box-shadow: 0 -4px 2px -2px gray;
+}
+.shadow{
+    box-shadow: 0 0 5px 2px gray;
+}
+/* hr */
+.hr_large{
+    height: 0.5em;
+    width: 35%;
+    float: left;
+}
+.hr_xlarge{
+    height: 0.5em;
+    width: 100%;
+}
+.red_hr{
+    border-color: #F7C331;
+    color: #F7C331;
+    background-color: #F7C331;
+}
+/* tools */
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+
+
+/* END UNIVERSAL */
+
+/* PAGE SPECIFIC */
+/* style implemented on only one page */
+
+/* index */
+/* divs/ other elements */
+#index_intro_text{
+    background-color: ;
+    width: 90em;
+    padding-bottom: 30em;
+    padding-top: 4em;
+    margin: auto;
+}
+#index_board_out{
+    margin: auto;
+    padding: 2em;
+    width: 95em;
+    background-color: #DFE1E1;
+    box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
+}
+#index_board_in{
+    width: 100%;
+    background-color: #B59B7C;
+    box-shadow: inset 0 0 10px #000000;
+    padding-bottom: 5em;
+}
+
+/* polaroids */
+.polaroid{
+    width: 25em;
+    height: 26em;
+    display: inline-block;
+    box-shadow: 0 0 2px 2px gray;
+}
+.polaroid_image{
+    width: 90%;
+    padding-left: 5%;
+    padding-top: 5%;
+}
+.polaroid_text{
+    text-align: center;
+    font-family: "Permanent Marker";
+    font-size: 1.4em;
+}
+.polaroid_row{
+    padding-left: 4em;
+    padding-right: 4em;
+    padding-top: 5em;
+}
+.polaroid_center{
+    margin-left: 6em;
+    margin-right: 6em;
+}
+/* parallax images */
+#index_parallax_0{
+    background-image: url("../images/0.jpg");
+}
+/* information section */
+.index_page_content{
+    margin: auto;
+    width: 95em;
+    padding: 3em 5em;
+}
+.index_page_row{
+    padding-top: 1em;
+    width: 100%;
+    display: block;
+    height: 20em;
+}
+.index_page_title{
+    display: inline-block;
+    width: 30%;
+    height: 20em;
+    margin: 0;
+}
+.index_title{
+    padding-left: 0.5em;
+    padding-right: 1em;
+    font-size: 4em;
+}
+.index_page_description{
+    display: inline-block;
+    box-sizing: border-box;
+    border: solid black 0.2em;
+    width: 69%;
+    height: 20em;
+    margin: 0;
+}
+.index_text{
+    padding: 1em;
+    font-size: 1.5em;
+}
+
+.content{
+  margin-top: 0;
+  padding-top: 3em;
+  width: 100%;
+}
+.banner{
+  margin-top: 0;
+  padding-top: 1em;
+  background-image: linear-gradient(to bottom right, #f7882F, #F7C331);
+  width: 100em;
+  height: 40em;
+  margin: auto;
+}
+.banner_content{
+  width: 90em;
+  margin: auto;
+}
+.title{
+  font-size: 4em;
+  margin-bottom: 0;
+}
+.subtext{
+  margin-top: 0;
+  padding-top: 1em;
+  border-top: solid 0.5em;
+  width: 20em;
+}
+.info_title{
+  font-size: 2.5em;
+  margin-bottom: 0;
+}
+.info_subtext{
+  margin-top: 0;
+  padding-top: 1em;
+  border-top: solid 0.3em;
+  width: 20em;
+}
+.information{
+  width: 90em;
+  margin: auto;
+  height: 25em;
+  position: relative;
+  z-index: 2;
+  top: -20em;
+}
+.information_content{
+  width: 30%;
+  height: 100%;
+  padding-top: 1em;
+  padding-left: 1em;
+  float: right;
+}
+/* END PAGE SPECIFIC */
