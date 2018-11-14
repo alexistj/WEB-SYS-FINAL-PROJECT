@@ -28,11 +28,55 @@
     $insert = $mysqli->query($sql);
 
     if($insert){
-      echo "Success!";
+      //echo "Success!";
+      //echo "<br>";
+      $sender = $_POST['sender'];
+      echo "ID number ";
+      echo $sender;
+      echo " has sent the following messages:";
+      echo "<br>";
+      echo "<br>";
+      //echo $sender;
+      $sqlquery = "SELECT * from websysproject.messenger where SenderID ='".$sender."'";
+      $result = $mysqli->query($sqlquery);
+      //var_dump($sqlquery);
+      //$numRecords = $result->num_rows;
+      //print_r($result);
+      //$count = $result->num_rows;
+
+      //If this prints then that means something is wrong with the $result which also means that something was wrong with the $sqlquery
+      if(!$result)
+      {
+        echo "<br>";
+        echo "FAILURE!";
+      }
+      $count = mysqli_num_rows($result);
+      if($count > 0){ 
+        /*echo ' ';
+        echo "Success!";
+        echo ' ';
+        echo $count;*/
+        for ($i=0; $i < $count; $i++){
+          $record = $result->fetch_assoc();
+          //printf("%s \n",$record["2"]);
+          echo '"';
+          echo $record["Message"];
+          echo '"';
+          echo " to ID number ".$record["ReceiverID"]." at ".$record["Time"]." on ".$record["Date"];
+          //print_r(array_values($record));
+          echo "<br>";
+        }
+        $result->free();
+      }
+     /*for ($i=0; $i < 3; $i++) {
+        $record = $result->fetch_assoc();
+        print_r($record);
+        echo ' ';
+      }*/
     } else {
       die("Error: {$mysqli->errno} : {$mysqli->error}");
     }
-
+    //$result->free();
     $mysqli->close();
   }
 }
@@ -42,14 +86,14 @@
       .error {color: #FF0000;}
     </style>
   </head>
-  <body>  
+  <body onload="ClearForm()">  
 
 
 
     <h2>Messenger Form</h2>
     <!--<p><span class="error">* required field</span></p>-->
 
-    <form class = "messageForm" method="post" action="">  
+    <form name = "messageForm" id = "messageForm" class = "messageForm" method="post" action="">  
       <!-- <?php //echo htmlspecialchars($_SERVER["PHP_SELF"]);?>-->
       <!--Message: <input type="text" name="message">
       <span class="error">* <?php //echo $messageErr;?></span>
@@ -82,9 +126,18 @@
       <br><br>
 
       <input id="submit" type="submit" name="submit" value="Submit">  
+
     </form>
   </body>
-  <script type ="text/javascript">
-
+  <script type="text/javascript" language="javascript">
+    //$('form').each(function() { this.reset() });
+    /*function ClearForm(){
+      document.getElementById("messageForm").reset();
+    }*/
+    function ClearForm() {
+      if(document.getElementById) {
+        document.messageForm.reset();
+      }
+    }
   </script>
 </html>
