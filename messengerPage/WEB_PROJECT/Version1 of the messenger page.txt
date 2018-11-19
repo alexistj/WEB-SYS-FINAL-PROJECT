@@ -9,39 +9,24 @@
 <!DOCTYPE HTML>  
 <html>
 <?php
-
-
   if(isset($_POST['submit']))
   {
   if( !empty($_POST)){
     $mysqli = new mysqli('localhost','root', '', 'websysproject');
-
     date_default_timezone_set('America/New_York');
     $date = date('m/d/Y');
     $time = date("h:i:sa");
-
     if($mysqli->connect_error){
       die('Connect Error: ' . $mysqli->connect_errno . ': ' . $mysqli->connect_error);
     }
-
     $sql = "INSERT INTO websysproject.messenger (SenderID,ReceiverID,Message,Date,Time) VALUES ('{$mysqli->real_escape_string($_POST['sender'])}','{$mysqli->real_escape_string($_POST['receiver'])}','{$mysqli->real_escape_string($_POST['Message'])}','".date('c')."','".$time."'         );";
     $insert = $mysqli->query($sql);
-
     if($insert){
       //echo "Success!";
       //echo "<br>";
       $sender = $_POST['sender'];
-      //echo "ID number ";
-      //echo $sender;
-      //echo " has sent the following messages:";
-      //echo "<br>";
-      //echo "<br>";
-      $sql = "SELECT name FROM websysproject.practice2 WHERE id = '".$sender."'";
-      $name1 = $mysqli->query($sql);
-      //echo $name1;
-      while ($row = $name1->fetch_assoc()) {
-        echo $row['name']."<br>";
-      }
+      echo "ID number ";
+      echo $sender;
       echo " has sent the following messages:";
       echo "<br>";
       echo "<br>";
@@ -52,7 +37,6 @@
       //$numRecords = $result->num_rows;
       //print_r($result);
       //$count = $result->num_rows;
-
       //If this prints then that means something is wrong with the $result which also means that something was wrong with the $sqlquery
       if(!$result)
       {
@@ -67,25 +51,13 @@
         echo $count;*/
         for ($i=0; $i < $count; $i++){
           $record = $result->fetch_assoc();
-          $sql = "SELECT name FROM websysproject.practice2 WHERE id = '".$record["ReceiverID"]."'";
-          $name1 = $mysqli->query($sql);
-          //echo $name1;
-          echo '"';
-          echo $record["Message"];
-          echo '"';
-          echo " to ";
-          while ($row = $name1->fetch_assoc()) {
-            echo $row['name'];
-          }
-          echo " at ".$record["Time"]." on ".$record["Date"];
-          echo "<br>";
           //printf("%s \n",$record["2"]);
-          /*echo '"';
+          echo '"';
           echo $record["Message"];
           echo '"';
           echo " to ID number ".$record["ReceiverID"]." at ".$record["Time"]." on ".$record["Date"];
           //print_r(array_values($record));
-          echo "<br>";*/
+          echo "<br>";
         }
         $result->free();
       }
