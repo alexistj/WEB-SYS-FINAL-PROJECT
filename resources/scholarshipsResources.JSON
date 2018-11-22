@@ -27,6 +27,33 @@
             "deadline": "January 31,2019",
             "description": "Air Force ROTC scholarships cover college tuition and most lab fees. You will also receive an annual textbook allowance and up to a $500 spending cash monthly stipend. A variety of full and partial scholarships are available, and certain scholarships have specific requirements. To qualify for scholarship consideration, you must have a minimum 3.0 GPA, minimum 1240 SAT score / 26 ACT Store; be at least 17 years old prior to scholarship activation and under 31 years old as of December 31 of the year you will be commissioned. There are physical requirements that must be met as well and applicants must complete a 24-day summer field training course at Maxwell AFB, Alabama (usually between your sophomore and junior years). Important scholarship dates are June 1, December 1, January 12, and May 1. For more information or to apply, please visit the scholarship provider's website.",
             "type": "Military",
+        },
+         
+        {
+            "title":"Sigma Chi Scholarships & Awards",
+            "amount":"10000$",
+            "appLink":"https://www.scholarships.com/award/MzAyOTA40/1",
+            "deadline":"March 12, 2019",
+            "description":"Each year, your generous donations make it possible for the Sigma Chi Foundation to grant numerous academic scholarships and awards to deserving Sigma Chi undergraduate and graduate brothers. There are awards for both undergraduate and graduate students. Applicants must be a member in good standing of Sigma Chi Fraternity with a minimum 2.5 undergraduate GPA and a 3.0 graduate minimum cumulative GPA. For more information or to apply, please visit the scholarship provider's website.",
+            "type":"Merit"
+        },
+         
+        {
+            "title":"Richard J Holland Memorial Scholarship",
+            "amount":"10000",
+            "appLink":"https://www.scholarships.com/award/MjYwMzM20/1",
+            "deadline":"March 15, 2019",
+            "description":"The Richard Holland Memorial Scholarship was established to remember the life and legacy of a great man, friend, son, and brother. Richard Holland was more than any one of these things - he was an infectious personality, a loyal teammate, a genuine smile, and a young soul. Applicants must plan to enroll or be enrolled in full time undergraduate study at an accredited four-year college or university for the entire academic year. Must demonstrate leadership and participation in extracurricular activities and demonstrate financial need. The award is renewable up to 3 years. For more information or to apply, please visit the scholarship provider's website.",
+            "type":"Merit"
+        },
+         
+        {
+            "title":"Taco Bell Live Más Scholarship",
+            "amount":"25000",
+            "appLink":"https://www.scholarships.com/award/MzAzOTMw0/1",
+            "deadline":"March 18, 2019",
+            "description":"The Live Más Scholarship is not based on your grades or how well you play sports. No essays, no test scores, no right or wrong answers. We’re looking for the next generation of innovators, creators, and dreamers. Submit a video (2 minutes or less in length) that tells us the story of your life's passion. It could be a short film, animation or just a simple testimonial. This is not about how well you can make a film - we just want you to show us your passion and explain why you should be considered for a Live Más Scholarship. Employees of Taco Bell Foundation, Inc., Taco Bell of America, LLC, Taco Bell Corp. and its parent, subsidiaries of its parent, franchisees, licensees, and the advertising and promotion agencies involved with this Program are not eligible to apply or receive a scholarship through this version of the program. For more information or to apply, please visit the scholarship provider's website.",
+            "type":"Creative"
         }
     
     ]
