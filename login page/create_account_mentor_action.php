@@ -14,11 +14,8 @@ if (!$db) {
     die("Connection failed: " . mysqli_connect_error());
 }
 
-echo 'Check0';
-
 // REGISTER USER
 //if (isset($_POST['submit'])) {
-    echo 'hmmm';
   // receive all input values from the form
   $name = mysqli_real_escape_string($db, $_POST['username']);
   $age = mysqli_real_escape_string($db, $_POST['age']);
@@ -28,8 +25,6 @@ echo 'Check0';
   $location = mysqli_real_escape_string($db, $_POST['location']);
   $password_1 = mysqli_real_escape_string($db, $_POST['password']);
   $password_2  = mysqli_real_escape_string($db, $_POST['password_2']);
-
-  echo 'Check1<br>';
 
   // form validation: ensure that the form is correctly filled ...
   // by adding (array_push()) corresponding error unto $errors array
@@ -41,8 +36,6 @@ echo 'Check0';
   if ($password_1 != $password_2) {
 	array_push($errors, "The two passwords do not match");
   }
-
-  echo 'Check2<br>';
 
   // first check the database to make sure
   // a user does not already exist with the same username and/or email
@@ -56,11 +49,8 @@ echo 'Check0';
     }
   }
 
-  echo 'Check3<br>';
-
   //  register user if there are no errors in the form
   //if (count($errors) == 0) {
-      echo 'Check4<br>';
   	$password = md5($password_1);//encrypt the password before saving in the database
 
   	$query = "INSERT INTO members (name, age, email, location, gender, password)
