@@ -1,5 +1,5 @@
 CREATE TABLE `mentees` (
- `id` int unsigned NOT NULL,
+ `id` int unsigned NOT NULL AUTO_INCREMENT,
  `name` varchar(100) NOT NULL,
  `age` int unsigned NOT NULL,
  `email` varchar(100) NOT NULL,
