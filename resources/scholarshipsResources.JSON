@@ -54,6 +54,33 @@
             "deadline":"March 18, 2019",
             "description":"The Live Más Scholarship is not based on your grades or how well you play sports. No essays, no test scores, no right or wrong answers. We’re looking for the next generation of innovators, creators, and dreamers. Submit a video (2 minutes or less in length) that tells us the story of your life's passion. It could be a short film, animation or just a simple testimonial. This is not about how well you can make a film - we just want you to show us your passion and explain why you should be considered for a Live Más Scholarship. Employees of Taco Bell Foundation, Inc., Taco Bell of America, LLC, Taco Bell Corp. and its parent, subsidiaries of its parent, franchisees, licensees, and the advertising and promotion agencies involved with this Program are not eligible to apply or receive a scholarship through this version of the program. For more information or to apply, please visit the scholarship provider's website.",
             "type":"Creative"
+        },
+         
+        {
+            "title":"Daniels Scholarship Program",
+            "amount":"10000",
+            "appLink":"https://www.unigo.com/scholarships/high-school-students/scholarships-for-high-school-seniors/daniels-scholarship-program/1006165",
+            "deadline":"November 29, 2018",
+            "description":"The award amount varies annually based on whether the student chooses to attend a Daniels Fund partner school or a non-partner school. If the student attends a partner school, the scholarship is a full ride. This means the combination of resources from the Daniels Fund and their school, as well as other scholarships they earn, will cover all of the scholar's college costs, including their Expected Family Contribution.",
+            "type":"Merit"
+        },
+         
+        {
+            "title":"Greenhouse Scholars Scholarship",
+            "amount":"5000",
+            "appLink":"https://greenhousescholars.org/our-scholars/become-a-scholar/",
+            "deadline":"December 17, 2018",
+            "description":"The Greenhouse Scholars Scholarship is for those who possess excellent leadership skills, an ability to persevere through difficult circumstances, and a strong interest in and commitment to their community.",
+            "type":"Merit"
+        },
+         
+        {
+            "title":"BEF General Academic Scholarship",
+            "amount":"5000",
+            "appLink":"https://www.esiason.org/cf-living/scholarships/bef-general-academic-scholarships",
+            "deadline":"December 28, 2018",
+            "description":"The Boomer Esiason Foundation’s General Academic Scholarships assist CF patients pursuing undergraduate and graduate degrees. Grants are awarded quarterly on the basis of demonstrated need and academic accomplishment.",
+            "type":"Merit"
         }
     
     ]
