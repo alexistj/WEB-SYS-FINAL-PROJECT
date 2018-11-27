@@ -6,5 +6,6 @@ CREATE TABLE `members` (
  `location` varchar(100) ,
  `gender` varchar(100) ,
  `password` varchar(100) NOT NULL,
+ `mentor` int unsigned NOT NULL,
  PRIMARY KEY (`id`)
 );
