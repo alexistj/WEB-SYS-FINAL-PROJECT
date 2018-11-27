@@ -67,7 +67,7 @@
         echo $count;*/
         for ($i=0; $i < $count; $i++){
           $record = $result->fetch_assoc();
-          $sql = "SELECT name FROM websysproject.practice2 WHERE id = '".$record["ReceiverID"]."'";
+          $sql = "SELECT name FROM websysproject.members WHERE id = '".$record["ReceiverID"]."'";
           $name1 = $mysqli->query($sql);
           //echo $name1;
           echo '"';
