@@ -1,9 +1,8 @@
 <?php
-require_once('connection.php');
 $id=$_SESSION['SESS_MEMBER_ID'];
 $result3 = mysql_query("SELECT * FROM member where mem_id='$id'");
 while($row3 = mysql_fetch_array($result3))
-{ 
+{
 $name=$row3['name'];
 $location=$row3['location'];
 $email=$row3['email'];
@@ -19,7 +18,7 @@ $age= $row['age'];
   <link rel="stylesheet" href="./login%2520page/static/semantic.min.css">
   <link rel="stylesheet" href="./login%20page/static/login_style.css">
   <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-  
+
 </head>
 
 
@@ -34,7 +33,7 @@ $age= $row['age'];
     <td width="82" valign="top"><div align="left">Name:</div></td>
     <td width="165" valign="top"><?php echo $name ?></td>
   </tr>
- 
+
   <tr>
     <td valign="top"><div align="left">Gender:</div></td>
     <td valign="top"><?php echo $gender ?></td>

@@ -53,7 +53,7 @@ if (!$db) {
   //if (count($errors) == 0) {
   	$password = md5($password_1);//encrypt the password before saving in the database
 
-  	$query = "INSERT INTO members (name, age, email, location, gender, password, mentor)
+  	$query = "INSERT INTO `members` (name, age, email, location, gender, password, mentor)
   			  VALUES('$name', '$age', '$email', '$location', '$gender',  '$password', 1)";
 
   	mysqli_query($db, $query);
