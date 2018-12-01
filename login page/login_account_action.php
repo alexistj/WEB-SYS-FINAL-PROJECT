@@ -16,22 +16,20 @@ if (isset($_POST['uname']) && isset($_POST['psw'] )) {
  $sql = "SELECT * FROM `members` WHERE `email` = \"" . $_POST['uname'] . "\"";
  $userResult = $db->query($sql);
  $userRecord = $userResult->fetch_assoc();
- //echo $userRecord['email'];
- //echo $_POST['uname'];
-  echo $userRecord['password'];
-  echo '<br>';
-  echo $password;
-  
-  if ($userRecord['email'] === $_POST['uname'] &&    $userRecord['password'] === $password) {
-    $_SESSION['id'] = $userRecord['id'];
-    $_SESSION['name'] = $userRecord['name'];
-    $_SESSION['age'] = $userRecord['age'];
-    $_SESSION['email'] = $userRecord['email'];
-    $_SESSION['location'] = $userRecord['location'];
-    $_SESSION['picture'] = $userRecord['name'];
-      echo $userRecord['email'];
- 
-    header("Location: profile.php");
+
+  if ($userRecord['email'] === $_POST['uname']  ) {
+    if(password_verify( $_POST['psw'], $userRecord['password'] )){
+        $_SESSION['id'] = $userRecord['id'];
+        $_SESSION['name'] = $userRecord['name'];
+        $_SESSION['age'] = $userRecord['age'];
+        $_SESSION['email'] = $userRecord['email'];
+        $_SESSION['location'] = $userRecord['location'];
+        $_SESSION['picture'] = $userRecord['name'];
+        //header("Location: profile.php");
+    }
+    else{
+          $err = 'Incorrect username or password.';
+    }
 
   } else {
     $err = 'Incorrect username or password.';
