@@ -1,5 +1,5 @@
 <?php
-   
+    session_start();
 
 // Connect to the database
   @ $db = new mysqli('localhost', 'root', '', 'lybl');
@@ -12,10 +12,10 @@
 // Check login
 if (isset($_POST['uname']) && isset($_POST['psw'] )) {
      
- $password = password_hash($_POST['psw'],PASSWORD_DEFAULT);
- $sql = "SELECT * FROM `members` WHERE `email` = \"" . $_POST['uname'] . "\"";
- $userResult = $db->query($sql);
- $userRecord = $userResult->fetch_assoc();
+         $password = password_hash($_POST['psw'],PASSWORD_DEFAULT);
+         $sql = "SELECT * FROM `members` WHERE `email` = \"" . $_POST['uname'] . "\"";
+         $userResult = $db->query($sql);
+         $userRecord = $userResult->fetch_assoc();
 
   if ($userRecord['email'] === $_POST['uname']  ) {
     if(password_verify( $_POST['psw'], $userRecord['password'] )){
@@ -25,7 +25,11 @@ if (isset($_POST['uname']) && isset($_POST['psw'] )) {
         $_SESSION['email'] = $userRecord['email'];
         $_SESSION['location'] = $userRecord['location'];
         $_SESSION['picture'] = $userRecord['name'];
-        //header("Location: profile.php");
+        $_SESSION['mentor'] = $userRecord['mentor'];
+        echo $_SESSION['id']; 
+        echo $_SESSION['name'];
+        echo $_SESSION['age'];
+        header("Location: profile.php");
     }
     else{
           $err = 'Incorrect username or password.';
