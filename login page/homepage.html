@@ -23,14 +23,14 @@
     </div>
 
     <div id="login" class="input-form">
-      <form class="ui form">
-        <label for="uname"><b>Username:</b></label>
-        <input type="text" placeholder="Enter Username" name="uname" required>
+      <form class="ui form" action="login_account_action.php" method="post">
+        <label for="uname"><b>Email:</b></label>
+        <input type="text" placeholder="Enter your email" name="uname" required>
 
         <label for="psw"><b>Password:</b></label>
         <input type="password" placeholder="Enter Password" name="psw" required>
 
-        <button id="submit" class="ui primary button">Submit</button>
+        <button id="sub" class="ui primary button" name="login" value="Login">Submit</button>
       </form>
       <button id="cancel" class="ui primary button">Cancel</button>
     </div>
