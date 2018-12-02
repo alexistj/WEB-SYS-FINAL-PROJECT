@@ -162,9 +162,9 @@
       $err = 'You have been logged out.';
         echo $err;
         header("Location: homepage.html");
-    
+
     }
-    
+
 >>>>>>> 10166574c292a4354171d3dd9c5cd8c6bb1907bd
 
 

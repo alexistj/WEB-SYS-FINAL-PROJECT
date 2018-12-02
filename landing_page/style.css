@@ -3,9 +3,7 @@
 
 /* UNIVERSAL */
 /* style implemented in more than one page */
-body{
-  margin: 0;
-}
+
 /* text */
 .title{
     font-size: 5em;
@@ -42,6 +40,7 @@ body{
 html, body{
     width: 100%;
     font-size: 100%;
+    margin: 0;
 
 }
 #navbar{
@@ -55,14 +54,16 @@ html, body{
     margin: auto;
 }
 #content{
-    width: 120em;
+    width: 100em;
     margin-top: 6vh;
     margin: auto;
 }
 #footer{
     margin-top: 5em;
+    position: relative;
+    left: 0;
     height: 10em;
-    width: 120em;
+    width: 105em;
     margin: auto;
 }
 .section{
@@ -139,7 +140,7 @@ html, body{
 #index_board_out{
     margin: auto;
     padding: 2em;
-    width: 80em;
+    width: 60em;
     background-color: #DFE1E1;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
 }
@@ -149,11 +150,13 @@ html, body{
     box-shadow: inset 0 0 10px #000000;
     padding-bottom: 5em;
 }
-
+#mentor_images{
+  height: 100%;
+}
 /* polaroids */
 .polaroid{
-    width: 20em;
-    height: 21em;
+    width: 13em;
+    height: 14em;
     display: inline-block;
     box-shadow: 0 0 2px 2px gray;
 }
@@ -291,7 +294,22 @@ html, body{
 
 #images{
   width: 95em;
-  background-color: red;
   margin: auto;
-  height: 70em;
+  height: 50em;
+}
+
+#carousel_images{
+  display: inline-block;
+  border-radius: 0 0 1em 0.5em;
+}
+#mentors{
+  float: right;
+  border-radius: 0 0 0.5em 1em;
+}
+
+.images_button{
+  width: 8em;
+  padding: .5em 0;
+  font-size: 1.5em;
+  text-align: center;
 }

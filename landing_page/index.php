@@ -35,7 +35,7 @@
           <h1 class="info_title citrus_text">Life After The Foster Care Can Be Scary,<br/>Let Us Help You Through This Process</h1>
         </span>
       </div>
-      <div id="images" class="section" style="margin-bottom:-17em; position:relative; top:-15em; margin-bottom: 1em">
+      <div id="images" class="section blueberry" style="margin-bottom:-17em; position:relative; top:-15em; margin-bottom: 1em">
       <div id="carousel" class="images_inactive">
         <?php
           $dir = "images/";
@@ -56,8 +56,8 @@
           }
         ?>
         </div>
-
-        <div id="index_board_out" class="image_inactive">
+        <div id="mentor_images" class="image_inactive">
+        <div id="index_board_out">
         <div id="index_board_in">
           <div class="polaroid_row">
             <div class="polaroid white_bg left">
@@ -88,10 +88,11 @@
             </div>
           </div>
         </div>
-        </div>
-        <button id="mentors">Mentors</button>
-        <button id="carousel_images">Carousel</button>
-        </div>
+      </div>
+      </div>
+      <div id="carousel_images" class="images_button blueberry">Carousel</div>
+      <div id="mentors" class="images_button citrus">Mentors</div>
+      </div>
     <!-- <div id="content">
       <div class="section blueberry shadow_top">
 	       <div id="index_intro_text" class="text_full">
@@ -105,7 +106,7 @@
                   </div>
 
       </div> -->
-    <div class="section" style="margin-top: -15em;">
+    <div class="section" style=" position: relative; top: -10em ; margin-bottom: 0;">
 	     <div class="index_page_content">
 	        <h1 class="title  remove_margin">What Can We Offer</h1><br/>
 	         <hr class="hr_xlarge red_hr remove_margin"/>

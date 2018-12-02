@@ -16,11 +16,13 @@ $(document).ready(function(){
   }, 3000);
   images = document.getElementById("images");
   $("#mentors").click(function(){
-    $("#index_board_out").removeClass("image_inactive");
+    $("#mentor_images").removeClass("image_inactive");
     $("#carousel").addClass("image_inactive");
+    $("#images").removeClass("blueberry").addClass("citrus");
   });
   $("#carousel_images").click(function(){
     $("#carousel").removeClass("image_inactive");
-    $("#index_board_out").addClass("image_inactive");
+    $("#mentor_images").addClass("image_inactive");
+    $("#images").removeClass("citrus").addClass("blueberry");
   });
 });

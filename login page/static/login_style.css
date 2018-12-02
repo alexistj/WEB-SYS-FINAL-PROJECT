@@ -10,6 +10,23 @@ body {
   background-size: cover;
 }
 
+#navbar{
+    height: 6vh;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    overflow: hidden;
+    z-index: 10;
+    margin-bottom: 0 !important;
+    margin: auto;
+}
+.white_bg{
+  background-color: white;
+}
+
+.shadow_bottom{
+    box-shadow: 0 4px 2px -2px gray;
+}
 
 #button-field {
   float: center;
