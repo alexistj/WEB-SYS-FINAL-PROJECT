@@ -1,7 +1,10 @@
 <!--https://www.youtube.com/watch?v=QS4LN747BXQ-->
 <!-- https://www.youtube.com/watch?v=n35Jn2nP9iU -->
 
-
+<?php 
+  include('config.php');
+    session_start();
+?>
 
 <!DOCTYPE HTML>  
 <html>
@@ -39,13 +42,17 @@
       //websysproject.messenger2 is the 'messenger' table of the group database
       $sqlquery = "SELECT * from websysproject.messenger2 where SenderEmail ='".$sender."' AND ReceiverEmail = '".$receiver."'";
       $result = $mysqli->query($sqlquery);
+
+      
       
       if(!$result)
       {
         echo "<br>";
         echo "FAILURE!";
       }
+      
       $count = mysqli_num_rows($result);
+      
       if($count > 0){ 
         for ($i=0; $i < $count; $i++){
           $record = $result->fetch_assoc();
@@ -65,9 +72,66 @@
         }
         $result->free();
       }
-    } else {
-      die("Error: {$mysqli->errno} : {$mysqli->error}");
-    }
+
+////////////////////////////////////////////////////////////////////
+      //websysproject.pratice2 is the 'members' table of the group database
+      $sql = "SELECT name FROM websysproject.practice2 WHERE email = '".$sender."'";
+      $name1 = $mysqli->query($sql);
+
+      //websysproject.pratice2 is the 'members' table of the group database
+    $sql = "SELECT name FROM websysproject.practice2 WHERE email = '".$receiver."'";
+      $name2 = $mysqli->query($sql);
+
+      echo "<br>";
+      echo "<br>";
+      while ($row = $name1->fetch_assoc()) {
+        echo $row['name']." ";
+      }
+      echo " has received the following messages from ";
+      while ($row2 = $name2->fetch_assoc()) {
+        echo $row2['name'].":<br>";
+      }
+      echo "<br>";
+
+      //websysproject.messenger2 is the 'messenger' table of the group database
+      $sqlquery2 = "SELECT * from websysproject.messenger2 where SenderEmail ='".$receiver."' AND ReceiverEmail = '".$sender."'";
+      $result2 = $mysqli->query($sqlquery2);
+
+      if(!$result2)
+      {
+        echo "<br>";
+        echo "FAILURE!";
+      }
+
+      $count2 = mysqli_num_rows($result2);
+      if($count2 > 0){
+        for ($i=0; $i < $count2; $i++){
+            $record2 = $result2->fetch_assoc();
+
+            //websysproject.messenger2 is the 'messenger' table of the group database
+            $sql2 = "SELECT name FROM  websysproject.practice2 WHERE email = '".$record2["SenderEmail"]."'";
+            $name2 = $mysqli->query($sql2);
+            echo '"';
+            echo $record2["Message"];
+            echo '"';
+            echo " to ";
+            while ($row2 = $name2->fetch_assoc()) {
+              echo $row2['name'];
+            }
+            echo " at ".$record2["Time"]." on ".$record2["Date"];
+            echo "<br>";
+          }
+          $result2->free();
+        }else{
+          echo "NO MESSAGES HAVE BEEN RECEIVED\n";
+        }
+      } else {
+        die("Error: {$mysqli->errno} : {$mysqli->error}");
+      }
+
+
+
+
     $mysqli->close();
   }
 }
