@@ -149,6 +149,13 @@
         echo '</tr>';
         echo '<tr>';
         echo '<td width="129" rowspan="5"><img src="'. $picture.'" width="129" height="129" alt="no image found"/></td>';
+
+        echo '<form action="upload_file.php" method="post"
+                enctype="multipart/form-data">
+                <label for="file">Filename:</label>
+                <input type="file" name="file" id="file"><br>
+                <input type="submit" name="submit" value="Submit">
+                </form>';
     }
 
 
