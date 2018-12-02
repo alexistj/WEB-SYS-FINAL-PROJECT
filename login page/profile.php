@@ -2,7 +2,7 @@
 
     session_start();
 
-    @ $db = new mysqli('localhost', 'root', 'lybl', 'lybl');
+    @ $db = new mysqli('localhost', 'root', '', 'lybl');
       if ($db->connect_error) {
             echo '<div class="messages">Could not connect to the database. Error: ';
             echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
@@ -25,12 +25,12 @@
             $name=$row3['name'];
             $location=$row3['location'];
             $email=$row3['email'];
-            $picture=$row3['picture'];
+            $picture= "../resources/profiles/" . $row3['picture'];
             $gender=$row3['gender'];
             $age= $row3['age'];
             $occupation= $row3['occupation'];
             $num_mentees= $row3['num_mentees'];
-
+        echo '<div><a href="../list_mentor_mentee_pages/mentor_mentee_list.php">View mentees</a></div>';
         echo '<table width="900" border="0" align="left" cellpadding="0">';
         echo  '<tr>';
         echo '<td height="26" colspan="2">Your Profile Information </td>';
@@ -39,10 +39,12 @@
       </form></div></td>';
         echo '<tr>';
 
+
         echo  '<tr>';
         echo '<td height="26" colspan="2">Contact mentees </td>';
-        echo '<td><div align="right"><a href="../menssengerPage/WEB_PROJECT/Messenger.html">Messenger</a></div></td>';
+        echo '<td><div align="right"><a href="../messengerPage/WEB_PROJECT/messenger_2.php">Messenger</a></div></td>';
         echo '<tr>';
+
 
         echo '<td width="82" valign="top"><div align="left">Name:</div></td>';
         echo '<td width="165" valign="top">'.$name.'</td>';
@@ -100,9 +102,10 @@
         $name=$row3['name'];
         $location=$row3['location'];
         $email=$row3['email'];
-        $picture=$row3['picture'];
+        $picture= "../resources/profiles/" . $row3['picture'];
         $gender=$row3['gender'];
         $age= $row3['age'];
+         echo '<div><a href="../list_mentor_mentee_pages/mentor_mentee_list.php">View mentors</a></p></div>';
 
         echo '<table width="900" border="0" align="left" cellpadding="0">';
         echo  '<tr>';
@@ -112,9 +115,9 @@
       </form></div></td>';
         echo '<tr>';
 
-         echo  '<tr>';
+        echo  '<tr>';
         echo '<td height="26" colspan="2">Contact mentors </td>';
-        echo '<td><div align="right"><a href="../menssengerPage/WEB_PROJECT/Messenger.html">Messenger</a></div></td>';
+        echo '<td><div align="right"><a href="../messengerPage/WEB_PROJECT/messenger_2.php">Messenger</a></div></td>';
         echo '<tr>';
         echo '<td width="82" valign="top"><div align="left">Name:</div></td>';
         echo '<td width="165" valign="top">'.$name.'</td>';
@@ -146,10 +149,16 @@
         echo '</tr>';
         echo '<tr>';
         echo '<td width="129" rowspan="5"><img src="'. $picture.'" width="129" height="129" alt="no image found"/></td>';
+
+        echo '<form action="upload_file.php" method="post"
+                enctype="multipart/form-data">
+                <label for="file">Filename:</label>
+                <input type="file" name="file" id="file"><br>
+                <input type="submit" name="submit" value="Submit">
+                </form>';
     }
 
-<<<<<<< HEAD
-=======
+
 
     // Logout
     if (isset($_SESSION['id']) && isset($_POST['logout']) && $_POST['logout'] == 'Logout') {
@@ -165,7 +174,6 @@
 
     }
 
->>>>>>> 10166574c292a4354171d3dd9c5cd8c6bb1907bd
 
 
 

@@ -1,5 +1,5 @@
 <?php
-    @ $db = new mysqli('localhost', 'root', 'lybl', 'lybl');
+    @ $db = new mysqli('localhost', 'root', '', 'lybl');
     if ($db->connect_error) {
         echo '<div class="messages">Could not connect to the database. Error: ';
         echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
