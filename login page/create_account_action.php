@@ -27,14 +27,23 @@
 
                     $selected = $_POST['listSelect'];
                     if ($selected[0] == 'mentor') {
-                        $query = "INSERT INTO members (name, age, email, location, gender, password, mentor)
+                        $query = "INSERT INTO members ( name, age, email, location, gender, password, mentor)
                       			  VALUES(\"" . $name . "\", \"" . $age . "\", \"" . $email . "\", \"" . $location . "\", \"" . $gender . "\", \"" . $password_1 . "\", \"" . 1 . "\")";
 
                       	mysqli_query($db, $query);
+                        
+                        $sql = "SELECT * FROM `members` WHERE `email` = \"" . $email . "\"";
 
-                        $query = "INSERT INTO mentors (name, age, email, location, gender, password, occupation, num_mentees)
-                      			  VALUES('$name', '$age', '$email', '$location', '$gender',  '$password_1', '$occupation', 0)";
-                        mysqli_query($db, $query);
+                        $userResult = $db->query($sql);
+                        $userRecord = $userResult->fetch_assoc();
+                        $id=  $userRecord['id'];
+                        echo $id;
+
+                        $query = "INSERT INTO mentors (id, name, age, email, location, gender, password, occupation, num_mentees)
+                      			  VALUES('$id', '$name', '$age', '$email', '$location', '$gender',  '$password_1', '$occupation', 0)";
+                        if(!mysqli_query($db, $query)){
+                             printf("Errormessage: %s\n", mysqli_error($db));
+                        }
 
                         header("Location: homepage.html");
                     } else {
@@ -42,9 +51,15 @@
                       			  VALUES('$name', '$age', '$email', '$location', '$gender',  '$password_1', 0)";
 
                       	mysqli_query($db, $query);
+                        $sql = "SELECT * FROM `members` WHERE `email` = \"" . $email . "\"";
 
-                        $query = "INSERT INTO mentees (name, age, email, location, gender, password)
-                      			  VALUES('$name', '$age', '$email', '$location', '$gender',  '$password_1')";
+                        $userResult = $db->query($sql);
+
+                        $userRecord = $userResult->fetch_assoc();
+                        $id=  $userRecord['id'];
+
+                        $query = "INSERT INTO mentees (id,name, age, email, location, gender, password)
+                      			  VALUES('$id','$name', '$age', '$email', '$location', '$gender',  '$password_1')";
                         mysqli_query($db, $query);
 
                         header("Location: homepage.html");

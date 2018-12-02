@@ -16,7 +16,11 @@
     $row3 = mysqli_fetch_array( $userResult );
 
 
-    if( $row3['mentor'] === 'mentor'){
+    if( $row3['mentor'] == 1){
+            $sql = 'SELECT * FROM `mentors` WHERE `id` =" ' . $id . '"';
+            $userResult = $db->query($sql);
+            echo $id;
+            $row3 = mysqli_fetch_array( $userResult );
      
             $name=$row3['name'];
             $location=$row3['location'];
@@ -96,7 +100,7 @@
         echo '<tr>';
         
          echo  '<tr>';
-        echo '<td height="26" colspan="2">Contact meontors </td>';
+        echo '<td height="26" colspan="2">Contact mentors </td>';
         echo '<td><div align="right"><a href="../menssengerPage/WEB_PROJECT/Messenger.html">Messeger</a></div></td>';
         echo '<tr>';
         echo '<td width="82" valign="top"><div align="left">Name:</div></td>';
