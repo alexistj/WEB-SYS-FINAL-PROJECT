@@ -25,7 +25,7 @@
             $name=$row3['name'];
             $location=$row3['location'];
             $email=$row3['email'];
-            $picture=$row3['picture'];
+            $picture= "../resources/profiles/" . $row3['picture'];
             $gender=$row3['gender'];
             $age= $row3['age'];
             $occupation= $row3['occupation'];
