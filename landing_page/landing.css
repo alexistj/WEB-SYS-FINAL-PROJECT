@@ -22,6 +22,9 @@ body{
 .apple_core_text{
   color: #DCC7AA;
 }
+.citrus_text{
+  color: #F7C331;
+}
 .white_text{
   color: white;
 }
@@ -132,4 +135,11 @@ header{
 .index_text{
     padding: 1em;
     font-size: 1.5em;
+}
+
+.carousel_image{
+  display:none;
+}
+#active{
+  display:block !important;
 }
