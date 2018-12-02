@@ -3,7 +3,8 @@
 
 <?php 
   //include('functions.php'); // functions
-  include('config.php'); 
+  include('config.php');
+    session_start();
 ?>
 
 <!DOCTYPE HTML>  
@@ -14,7 +15,7 @@
   if(isset($_POST['submit']))
   {
   if( !empty($_POST)){
-    $mysqli = new mysqli('localhost','root', '', 'websysproject');
+    $mysqli = new mysqli('localhost','root', '', 'lybl');
 
     date_default_timezone_set('America/New_York');
     $date = date('m/d/Y');
@@ -24,7 +25,7 @@
       die('Connect Error: ' . $mysqli->connect_errno . ': ' . $mysqli->connect_error);
     }
 
-    $sql = "INSERT INTO websysproject.messenger (SenderID,ReceiverID,Message,Date,Time) VALUES ('{$mysqli->real_escape_string($_POST['sender'])}','{$mysqli->real_escape_string($_POST['receiver'])}','{$mysqli->real_escape_string($_POST['Message'])}','".date('c')."','".$time."'         );";
+    $sql = "INSERT INTO lybl.messenger (SenderEmail,ReceiverEmail,Message,Date,Time) VALUES ('{$mysqli->real_escape_string($_POST['sender'])}','{$mysqli->real_escape_string($_POST['receiver'])}','{$mysqli->real_escape_string($_POST['Message'])}','".date('c')."','".$time."'         );";
     $insert = $mysqli->query($sql);
 
     if($insert){
@@ -36,7 +37,7 @@
       //echo " has sent the following messages:";
       //echo "<br>";
       //echo "<br>";
-      $sql = "SELECT name FROM websysproject.practice2 WHERE id = '".$sender."'";
+      $sql = "SELECT name FROM members WHERE email = '".$sender."'";
       $name1 = $mysqli->query($sql);
       //echo $name1;
       while ($row = $name1->fetch_assoc()) {
@@ -46,7 +47,7 @@
       echo "<br>";
       echo "<br>";
       //echo $sender;
-      $sqlquery = "SELECT * from websysproject.messenger where SenderID ='".$sender."'";
+      $sqlquery = "SELECT * from messenger where SenderEmail ='".$sender."'";
       $result = $mysqli->query($sqlquery);
       //var_dump($sqlquery);
       //$numRecords = $result->num_rows;
@@ -67,7 +68,7 @@
         echo $count;*/
         for ($i=0; $i < $count; $i++){
           $record = $result->fetch_assoc();
-          $sql = "SELECT name FROM websysproject.members WHERE id = '".$record["ReceiverID"]."'";
+          $sql = "SELECT name FROM  members WHERE email = '".$record["ReceiverEmail"]."'";
           $name1 = $mysqli->query($sql);
           //echo $name1;
           echo '"';
