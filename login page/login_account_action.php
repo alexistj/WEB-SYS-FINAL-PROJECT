@@ -26,9 +26,9 @@ if (isset($_POST['uname']) && isset($_POST['psw'] )) {
         $_SESSION['location'] = $userRecord['location'];
         $_SESSION['picture'] = $userRecord['name'];
         $_SESSION['mentor'] = $userRecord['mentor'];
-        echo $_SESSION['id']; 
-        echo $_SESSION['name'];
-        echo $_SESSION['age'];
+       // echo $_SESSION['id']; 
+        //echo $_SESSION['name'];
+        //echo $_SESSION['age'];
         header("Location: profile.php");
     }
     else{

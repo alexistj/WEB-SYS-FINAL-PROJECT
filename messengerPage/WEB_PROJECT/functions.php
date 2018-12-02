@@ -79,7 +79,7 @@
 		global $table;
 
 
-		$mysql = new mysqli('localhost','root', '', 'websysproject');
+		$mysql = new mysqli('localhost','root', '', 'lybl');
 
 
 		if ($mysql->connect_error){
