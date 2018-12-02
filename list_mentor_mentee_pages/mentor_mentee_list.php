@@ -1,23 +1,29 @@
 <?php
 
     session_start();
+    $host = "localhost";
+    $user = "root";
+    $pass = "";
+    $dbname="lybl";
+    $db =new PDO("mysql:host=".$host.";dbname=$dbname;",$user,$pass);
 
-    @ $db = new mysqli('localhost', 'root', '', 'lybl');
+  /*  @ $db = new mysqli('localhost', 'root', '', 'lybl');
       if ($db->connect_error) {
             echo '<div class="messages">Could not connect to the database. Error: ';
             echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
       }
+      */
     
     
 
     $id=   $_SESSION['id'];
     $sql = 'SELECT * FROM `members` WHERE `id` =" ' . $id . '"';
-    $userResult = $db->query($sql);
-    $row3 = mysqli_fetch_array( $userResult );
+    $pstmt = $db->query($sql);
+    $row3 = $pstmt->fetchAll();
 
 
     
-    if( $row3['mentor'] == 1){
+    if( $row3[0]['mentor'] == 0){
         
         // Attempt insert query execution
         $sql = "SELECT * FROM mentors
@@ -33,7 +39,7 @@
         //Fetch all the results then output each row using foreach
         $data = $pstmt->fetchAll();
    
-        foreach($data as $row ) {
+        foreach($data as $row3 ) {
 
             $name=$row3['name'];
             $location=$row3['location'];
@@ -89,6 +95,10 @@
             echo '</tr>';
             echo '<tr>';
             echo '<td width="129" rowspan="5"><img src="'. $picture.'" width="129" height="129" alt="no image found"/></td>';
+            echo '<br>';
+            echo '<br>';
+            echo '<br>';
+            echo '<br>';
         }
     }
         
@@ -109,11 +119,11 @@
             }
             //Fetch all the results then output each row using foreach
             $data = $pstmt->fetchAll();
-            
-            foreach($data as $row ) {
+
+            foreach($data as $row3 ) {
        
             //Fetch all the results then output each row using foreach
-            $data = $pstmt->fetchAll();
+            //$data = $pstmt->fetchAll();
             $name=$row3['name'];
             $location=$row3['location'];
             $email=$row3['email'];
@@ -153,6 +163,10 @@
             echo '</tr>';
             echo '<tr>';
             echo '<td width="129" rowspan="5"><img src="'. $picture.'" width="129" height="129" alt="no image found"/></td>';
+            echo '<br>';
+            echo '<br>';
+            echo '<br>';
+            echo '<br>';
          }
         }
         
