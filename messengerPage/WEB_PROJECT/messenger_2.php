@@ -14,7 +14,7 @@
   if( !empty($_POST)){
 
     //websysproject is the name of the database i have used and connected to. Please change it so that it connects to the group database
-    $mysqli = new mysqli('localhost','root', '', 'websysproject');
+    $mysqli = new mysqli('localhost','root', '', 'lybl');
     date_default_timezone_set('America/New_York');
     $date = date('m/d/Y');
     $time = date("h:i:sa");
@@ -23,14 +23,14 @@
     }
 
     //websysproject.messenger2 is the 'messenger' table of the group database
-    $sql = "INSERT INTO websysproject.messenger2 (SenderEmail,ReceiverEmail,Message,Date,Time) VALUES ('{$mysqli->real_escape_string($_POST['sender'])}','{$mysqli->real_escape_string($_POST['receiver'])}','{$mysqli->real_escape_string($_POST['Message'])}','".date('c')."','".$time."'         );";
+    $sql = "INSERT INTO lybl.messenger (SenderEmail,ReceiverEmail,Message,Date,Time) VALUES ('{$mysqli->real_escape_string($_POST['sender'])}','{$mysqli->real_escape_string($_POST['receiver'])}','{$mysqli->real_escape_string($_POST['Message'])}','".date('c')."','".$time."'         );";
     $insert = $mysqli->query($sql);
     if($insert){
       $sender = $_POST['sender'];
       $receiver = $_POST['receiver'];
 
       //websysproject.pratice2 is the 'members' table of the group database
-      $sql = "SELECT name FROM websysproject.practice2 WHERE email = '".$sender."'";
+      $sql = "SELECT name FROM lybl.members WHERE email = '".$sender."'";
       $name1 = $mysqli->query($sql);
       while ($row = $name1->fetch_assoc()) {
         echo $row['name']."<br>";
@@ -40,7 +40,7 @@
       echo "<br>";
 
       //websysproject.messenger2 is the 'messenger' table of the group database
-      $sqlquery = "SELECT * from websysproject.messenger2 where SenderEmail ='".$sender."' AND ReceiverEmail = '".$receiver."'";
+      $sqlquery = "SELECT * from lybl.messenger where SenderEmail ='".$sender."' AND ReceiverEmail = '".$receiver."'";
       $result = $mysqli->query($sqlquery);
 
       
@@ -58,7 +58,7 @@
           $record = $result->fetch_assoc();
 
           //websysproject.messenger2 is the 'messenger' table of the group database
-          $sql = "SELECT name FROM  websysproject.practice2 WHERE email = '".$record["ReceiverEmail"]."'";
+          $sql = "SELECT name FROM  lybl.messenger WHERE email = '".$record["ReceiverEmail"]."'";
           $name1 = $mysqli->query($sql);
           echo '"';
           echo $record["Message"];
@@ -75,11 +75,11 @@
 
 ////////////////////////////////////////////////////////////////////
       //websysproject.pratice2 is the 'members' table of the group database
-      $sql = "SELECT name FROM websysproject.practice2 WHERE email = '".$sender."'";
+      $sql = "SELECT name FROM lybl.members WHERE email = '".$sender."'";
       $name1 = $mysqli->query($sql);
 
       //websysproject.pratice2 is the 'members' table of the group database
-    $sql = "SELECT name FROM websysproject.practice2 WHERE email = '".$receiver."'";
+    $sql = "SELECT name FROM lybl.members WHERE email = '".$receiver."'";
       $name2 = $mysqli->query($sql);
 
       echo "<br>";
@@ -94,7 +94,7 @@
       echo "<br>";
 
       //websysproject.messenger2 is the 'messenger' table of the group database
-      $sqlquery2 = "SELECT * from websysproject.messenger2 where SenderEmail ='".$receiver."' AND ReceiverEmail = '".$sender."'";
+      $sqlquery2 = "SELECT * from lybl.messenger where SenderEmail ='".$receiver."' AND ReceiverEmail = '".$sender."'";
       $result2 = $mysqli->query($sqlquery2);
 
       if(!$result2)
@@ -109,7 +109,7 @@
             $record2 = $result2->fetch_assoc();
 
             //websysproject.messenger2 is the 'messenger' table of the group database
-            $sql2 = "SELECT name FROM  websysproject.practice2 WHERE email = '".$record2["SenderEmail"]."'";
+            $sql2 = "SELECT name FROM  lybl.messenger WHERE email = '".$record2["SenderEmail"]."'";
             $name2 = $mysqli->query($sql2);
             echo '"';
             echo $record2["Message"];
