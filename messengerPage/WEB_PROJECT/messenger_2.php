@@ -28,6 +28,7 @@
       //echo "Success!";
       //echo "<br>";
       $sender = $_POST['sender'];
+      $receiver = $_POST['receiver'];
       //echo "ID number ";
       //echo $sender;
       //echo " has sent the following messages:";
@@ -47,7 +48,7 @@
       //echo $sender;
 
       //websysproject.messenger2 is the 'messenger' table of the group database
-      $sqlquery = "SELECT * from websysproject.messenger2 where SenderEmail ='".$sender."'";
+      $sqlquery = "SELECT * from websysproject.messenger2 where SenderEmail ='".$sender."' AND ReceiverEmail = '".$receiver."'";
       $result = $mysqli->query($sqlquery);
       //var_dump($sqlquery);
       //$numRecords = $result->num_rows;
