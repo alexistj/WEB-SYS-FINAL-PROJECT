@@ -32,6 +32,9 @@ body{
 .apple_core_text{
   color: #DCC7AA;
 }
+.citrus_text{
+  color: #F7C331;
+}
 .white_text{
   color: white;
 }
@@ -86,23 +89,6 @@ html, body{
     background-color: gold;
 }
 
-/* buttons */
-
-/* parallax */
-.parallax_text{
-    width: 100%;
-    text-align: center;
-    padding-top: 22em;
-}
-.parallax_full{
-
-    width: 120rem;
-    background-attachment: fixed;
-    background-position: center;
-    background-repeat: no-repeat;
-    background-size: cover;
-    overflow-y: hidden;
-}
 /* box shadows */
 .shadow_bottom{
     box-shadow: 0 4px 2px -2px gray;
@@ -145,7 +131,6 @@ html, body{
 /* index */
 /* divs/ other elements */
 #index_intro_text{
-    background-color: ;
     width: 90em;
     padding-bottom: 30em;
     padding-top: 4em;
@@ -154,7 +139,7 @@ html, body{
 #index_board_out{
     margin: auto;
     padding: 2em;
-    width: 95em;
+    width: 80em;
     background-color: #DFE1E1;
     box-shadow: 0 0 5px 2px rgba(0, 0, 0, 0.4);
 }
@@ -167,8 +152,8 @@ html, body{
 
 /* polaroids */
 .polaroid{
-    width: 25em;
-    height: 26em;
+    width: 20em;
+    height: 21em;
     display: inline-block;
     box-shadow: 0 0 2px 2px gray;
 }
@@ -283,4 +268,30 @@ html, body{
   padding-left: 1em;
   float: right;
 }
+
+/* CAROUSEL */
+#carousel{
+  margin: auto;
+  height: 100%;
+}
+.carousel_image{
+  display:none;
+  margin: auto;
+}
+#active{
+  display:block !important;
+}
+
+/* IMAGES */
+.image_inactive{
+  display: none;
+}
+
 /* END PAGE SPECIFIC */
+
+#images{
+  width: 95em;
+  background-color: red;
+  margin: auto;
+  height: 70em;
+}
