@@ -2,7 +2,7 @@
 
     session_start();
 
-    @ $db = new mysqli('localhost', 'root', 'lybl', 'lybl');
+    @ $db = new mysqli('localhost', 'root', '', 'lybl');
       if ($db->connect_error) {
             echo '<div class="messages">Could not connect to the database. Error: ';
             echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
@@ -42,7 +42,7 @@
 
         echo  '<tr>';
         echo '<td height="26" colspan="2">Contact mentees </td>';
-        echo '<td><div align="right"><a href="../menssengerPage/WEB_PROJECT/messenger_2.php">Messenger</a></div></td>';
+        echo '<td><div align="right"><a href="../messengerPage/WEB_PROJECT/messenger_2.php">Messenger</a></div></td>';
         echo '<tr>';
 
 
@@ -117,7 +117,7 @@
 
         echo  '<tr>';
         echo '<td height="26" colspan="2">Contact mentors </td>';
-        echo '<td><div align="right"><a href="../menssengerPage/WEB_PROJECT/messenger_2.php">Messenger</a></div></td>';
+        echo '<td><div align="right"><a href="../messengerPage/WEB_PROJECT/messenger_2.php">Messenger</a></div></td>';
         echo '<tr>';
         echo '<td width="82" valign="top"><div align="left">Name:</div></td>';
         echo '<td width="165" valign="top">'.$name.'</td>';

@@ -1,10 +1,7 @@
 <!--https://www.youtube.com/watch?v=QS4LN747BXQ-->
 <!-- https://www.youtube.com/watch?v=n35Jn2nP9iU -->
 
-<?php 
-  include('config.php');
-    session_start();
-?>
+
 
 <!DOCTYPE HTML>  
 <html>
