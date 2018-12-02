@@ -34,7 +34,9 @@
         echo '<table width="900" border="0" align="left" cellpadding="0">';
         echo  '<tr>';
         echo '<td height="26" colspan="2">Your Profile Information </td>';
-        echo '<td><div align="right"><a href="index.php">logout</a></div></td>';
+        echo '<td><div align="right"><div align="right">  <form method="post" action="profile.php">
+        <input name="logout" type="submit" value="Logout" />
+      </form></div></td>';
         echo '<tr>';
 
         echo  '<tr>';
@@ -105,7 +107,9 @@
         echo '<table width="900" border="0" align="left" cellpadding="0">';
         echo  '<tr>';
         echo '<td height="26" colspan="2">Your Profile Information </td>';
-        echo '<td><div align="right"><a href="index.php">logout</a></div></td>';
+        echo '<td><div align="right">  <form method="post" action="index.php">
+        <input name="logout" type="submit" value="Logout" />
+      </form></div></td>';
         echo '<tr>';
 
          echo  '<tr>';
@@ -138,12 +142,30 @@
         echo '<td valign="top">'.$email.'</td>';
         echo '</tr>';
         echo '</table>';
-        echo '<p align="center"><a href="index.php"></a></p>';
+        echo '<p align="center"><a href="profile.php"></a></p>';
         echo '</tr>';
         echo '<tr>';
         echo '<td width="129" rowspan="5"><img src="'. $picture.'" width="129" height="129" alt="no image found"/></td>';
     }
 
+<<<<<<< HEAD
+=======
+
+    // Logout
+    if (isset($_SESSION['id']) && isset($_POST['logout']) && $_POST['logout'] == 'Logout') {
+      // Unset the keys from the superglobal
+      unset($_SESSION['id']);
+      // Destroy the session cookie for this session
+      setcookie(session_name(), '', time() - 72000);
+      // Destroy the session data store
+      session_destroy();
+      $err = 'You have been logged out.';
+        echo $err;
+        header("Location: homepage.html");
+    
+    }
+    
+>>>>>>> 10166574c292a4354171d3dd9c5cd8c6bb1907bd
 
 
 

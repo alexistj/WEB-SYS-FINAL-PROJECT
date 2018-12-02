@@ -10,34 +10,33 @@
 <!DOCTYPE HTML>  
 <html>
 <?php
-
-
   if(isset($_POST['submit']))
   {
   if( !empty($_POST)){
-    $mysqli = new mysqli('localhost','root', '', 'lybl');
-
+    $mysqli = new mysqli('localhost','root', '', 'websysproject');
     date_default_timezone_set('America/New_York');
     $date = date('m/d/Y');
     $time = date("h:i:sa");
-
     if($mysqli->connect_error){
       die('Connect Error: ' . $mysqli->connect_errno . ': ' . $mysqli->connect_error);
     }
 
-    $sql = "INSERT INTO lybl.messenger (SenderEmail,ReceiverEmail,Message,Date,Time) VALUES ('{$mysqli->real_escape_string($_POST['sender'])}','{$mysqli->real_escape_string($_POST['receiver'])}','{$mysqli->real_escape_string($_POST['Message'])}','".date('c')."','".$time."'         );";
+    //websysproject.messenger2 is the 'messenger' table of the group database
+    $sql = "INSERT INTO websysproject.messenger2 (SenderEmail,ReceiverEmail,Message,Date,Time) VALUES ('{$mysqli->real_escape_string($_POST['sender'])}','{$mysqli->real_escape_string($_POST['receiver'])}','{$mysqli->real_escape_string($_POST['Message'])}','".date('c')."','".$time."'         );";
     $insert = $mysqli->query($sql);
-
     if($insert){
       //echo "Success!";
       //echo "<br>";
       $sender = $_POST['sender'];
+      $receiver = $_POST['receiver'];
       //echo "ID number ";
       //echo $sender;
       //echo " has sent the following messages:";
       //echo "<br>";
       //echo "<br>";
-      $sql = "SELECT name FROM members WHERE email = '".$sender."'";
+
+      //websysproject.pratice2 is the 'members' table of the group database
+      $sql = "SELECT name FROM websysproject.practice2 WHERE email = '".$sender."'";
       $name1 = $mysqli->query($sql);
       //echo $name1;
       while ($row = $name1->fetch_assoc()) {
@@ -47,13 +46,14 @@
       echo "<br>";
       echo "<br>";
       //echo $sender;
-      $sqlquery = "SELECT * from messenger where SenderEmail ='".$sender."'";
+
+      //websysproject.messenger2 is the 'messenger' table of the group database
+      $sqlquery = "SELECT * from websysproject.messenger2 where SenderEmail ='".$sender."' AND ReceiverEmail = '".$receiver."'";
       $result = $mysqli->query($sqlquery);
       //var_dump($sqlquery);
       //$numRecords = $result->num_rows;
       //print_r($result);
       //$count = $result->num_rows;
-
       //If this prints then that means something is wrong with the $result which also means that something was wrong with the $sqlquery
       if(!$result)
       {
@@ -68,7 +68,9 @@
         echo $count;*/
         for ($i=0; $i < $count; $i++){
           $record = $result->fetch_assoc();
-          $sql = "SELECT name FROM  members WHERE email = '".$record["ReceiverEmail"]."'";
+
+          //websysproject.messenger2 is the 'messenger' table of the group database
+          $sql = "SELECT name FROM  websysproject.practice2 WHERE email = '".$record["ReceiverEmail"]."'";
           $name1 = $mysqli->query($sql);
           //echo $name1;
           echo '"';
@@ -123,7 +125,7 @@
 
 
       <label>
-        <span>Sender ID:</span>
+        <span>Sender email:</span>
       </label>
       <input id="sender" type="text" name="sender">
       <!-- <input id="sender" type="text" name="sender"
@@ -133,7 +135,7 @@
 
 
       <label>
-        <span>Receiver ID:</span>
+        <span>Receiver email:</span>
       </label>
       <input id="receiver" type="text" name="receiver">
       <!--<input id="receiver" type="text" name="receiver" 
