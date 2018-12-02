@@ -1,5 +1,5 @@
 <?php
-    @ $db = new mysqli('localhost', 'root', '', 'lybl');
+    @ $db = new mysqli('localhost', 'root', 'lybl', 'lybl');
     if ($db->connect_error) {
         echo '<div class="messages">Could not connect to the database. Error: ';
         echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
@@ -31,7 +31,7 @@
                       			  VALUES(\"" . $name . "\", \"" . $age . "\", \"" . $email . "\", \"" . $location . "\", \"" . $gender . "\", \"" . $password_1 . "\", \"" . 1 . "\")";
 
                       	mysqli_query($db, $query);
-                        
+
                         $sql = "SELECT * FROM `members` WHERE `email` = \"" . $email . "\"";
 
                         $userResult = $db->query($sql);

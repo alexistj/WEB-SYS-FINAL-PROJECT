@@ -2,7 +2,7 @@
     session_start();
 
 // Connect to the database
-  @ $db = new mysqli('localhost', 'root', '', 'lybl');
+  @ $db = new mysqli('localhost', 'root', 'lybl', 'lybl');
   if ($db->connect_error) {
         echo '<div class="messages">Could not connect to the database. Error: ';
         echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
@@ -11,7 +11,7 @@
 
 // Check login
 if (isset($_POST['uname']) && isset($_POST['psw'] )) {
-     
+
          $password = password_hash($_POST['psw'],PASSWORD_DEFAULT);
          $sql = "SELECT * FROM `members` WHERE `email` = \"" . $_POST['uname'] . "\"";
          $userResult = $db->query($sql);
@@ -26,7 +26,7 @@ if (isset($_POST['uname']) && isset($_POST['psw'] )) {
         $_SESSION['location'] = $userRecord['location'];
         $_SESSION['picture'] = $userRecord['name'];
         $_SESSION['mentor'] = $userRecord['mentor'];
-       // echo $_SESSION['id']; 
+       // echo $_SESSION['id'];
         //echo $_SESSION['name'];
         //echo $_SESSION['age'];
         header("Location: profile.php");
@@ -37,10 +37,10 @@ if (isset($_POST['uname']) && isset($_POST['psw'] )) {
 
   } else {
     $err = 'Incorrect username or password.';
-      
+
   }
 }
-    
+
 
 
 ?>
