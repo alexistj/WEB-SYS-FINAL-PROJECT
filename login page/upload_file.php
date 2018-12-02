@@ -26,8 +26,6 @@
         } else {
 
             if (move_uploaded_file( $_FILES['file']['tmp_name'], "../resources/profiles/" . basename($_FILES['file']['name']))) {
-                echo "file moved";
-
                 $id =   $_SESSION['id'];
                 $sql = 'SELECT * FROM `members` WHERE `id` =" ' . $id . '"';
                 $userResult = $db->query($sql);
@@ -40,12 +38,21 @@
 
                     $sql = 'UPDATE `mentors` SET picture="' . $_FILES["file"]["name"] . '" WHERE id="' . $id . '"';
                     if ($db->query($sql) === TRUE) {
-                        echo "Record updated successfully";
+                        echo "Picture updated successfully";
                     } else {
                         echo "Error updating record: " . $db->error;
                     }
                 } else {
                     $sql = 'SELECT * FROM `mentees` WHERE `id` =" ' . $id . '"';
+                    $userResult = $db->query($sql);
+                    $user = mysqli_fetch_array( $userResult );
+
+                    $sql = 'UPDATE `mentees` SET picture="' . $_FILES["file"]["name"] . '" WHERE id="' . $id . '"';
+                    if ($db->query($sql) === TRUE) {
+                        echo "Picture updated successfully";
+                    } else {
+                        echo "Error updating record: " . $db->error;
+                    }
                 }
 
             }

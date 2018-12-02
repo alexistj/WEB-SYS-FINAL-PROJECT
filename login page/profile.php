@@ -44,7 +44,7 @@
         echo '<td height="26" colspan="2">Contact mentees </td>';
         echo '<td><div align="right"><a href="../menssengerPage/WEB_PROJECT/messenger_2.php">Messenger</a></div></td>';
         echo '<tr>';
-        
+
 
         echo '<td width="82" valign="top"><div align="left">Name:</div></td>';
         echo '<td width="165" valign="top">'.$name.'</td>';
@@ -102,7 +102,7 @@
         $name=$row3['name'];
         $location=$row3['location'];
         $email=$row3['email'];
-        $picture=$row3['picture'];
+        $picture= "../resources/profiles/" . $row3['picture'];
         $gender=$row3['gender'];
         $age= $row3['age'];
          echo '<div><a href="../list_mentor_mentee_pages/mentor_mentee_list.php">View mentors</a></p></div>';
@@ -164,9 +164,9 @@
       $err = 'You have been logged out.';
         echo $err;
         header("Location: homepage.html");
-    
+
     }
-    
+
 
 
 
