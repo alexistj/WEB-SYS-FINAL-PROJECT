@@ -1,3 +1,15 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Term Project: Profile Page</title>
+  <link rel="stylesheet" href="./login%2520page/static/semantic.min.css">
+  <link rel="stylesheet" href="./login%20page/static/login_style.css">
+  <link rel="stylesheet" href="../landing_page/style.css"/>
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+</head>
+<body>
+
 <?php
 
     session_start();
@@ -19,7 +31,7 @@
     if( $row3['mentor'] == 1){
             $sql = 'SELECT * FROM `mentors` WHERE `id` =" ' . $id . '"';
             $userResult = $db->query($sql);
-            echo $id;
+
             $row3 = mysqli_fetch_array( $userResult );
 
             $name=$row3['name'];
@@ -30,64 +42,51 @@
             $age= $row3['age'];
             $occupation= $row3['occupation'];
             $num_mentees= $row3['num_mentees'];
-        echo '<div><a href="../list_mentor_mentee_pages/mentor_mentee_list.php">View mentees</a></div>';
-        echo '<table width="900" border="0" align="left" cellpadding="0">';
-        echo  '<tr>';
-        echo '<td height="26" colspan="2">Your Profile Information </td>';
-        echo '<td><div align="right"><div align="right">  <form method="post" action="profile.php">
-        <input name="logout" type="submit" value="Logout" />
-      </form></div></td>';
-        echo '<tr>';
+
+        echo '<div id="navbar" class="white_bg shadow_bottom">
+            <div id="logo">
+              <div id="logo_image">
+                <a href="../landing_page/index.php"><img src="../resources/logo.png"/ width="25%" > LYBL</a>
+              </div>
+            </div>
+            <div id="navigation">
+              <div id="navigation_links">
+                <button value="../messengerPage/WEB_PROJECT/messenger_2.php" class="navigation_button citrus">
+                  Messenger
+                </button>
+                <button value="../list_mentor_mentee_pages/mentor_mentee_list.php" class="navigation_button citrus">
+                  Mentees
+                </button>
+                <form method="post" action="profile.php" style="display: inline-block">
+                  <input class="navigation_button" name="logout" type="submit" value="Logout" />
+                </form>
+              </div>
+            </div>
+          </div>
+          <div id="content">';
+
+        echo '<div id="profile">
+                <div id="profile_left">
+                  <img src='. $picture.' width="250em" height="250em" alt="no image found"/>
+                </div>
+                <div id="profile_right">
+                  <h1 id="name">'.$name."'s Information</h1>
+                  <h2 class='profile_info'>Age: ".$age.'</h2>
+                  <h2 class="profile_info">Gender: '.$gender.'</h2>
+                  <h2 class="profile_info">Email: '.$email.'</h2>
+                  <h2 class="profile_info">Location: '.$location.'</h2>
+                  <h2 class="profile_info">Occupation: '.$occupation.'</h2>
+                </div>
+                <form action="upload_file.php" method="post"
+                  enctype="multipart/form-data">
+                  <input type="file" name="file" id="file"><br>
+                  <input class="upload_button" type="submit" name="submit" value="Submit">
+                </form>
+              </div>';
 
 
-        echo  '<tr>';
-        echo '<td height="26" colspan="2">Contact mentees </td>';
-        echo '<td><div align="right"><a href="../messengerPage/WEB_PROJECT/messenger_2.php">Messenger</a></div></td>';
-        echo '<tr>';
 
 
-        echo '<td width="82" valign="top"><div align="left">Name:</div></td>';
-        echo '<td width="165" valign="top">'.$name.'</td>';
-        echo '</tr>';
-
-        echo '<tr>';
-        echo '<td valign="top"><div align="left">Gender:</div></td>';
-        echo '<td valign="top">'.$gender.'</td>';
-        echo '</tr>';
-
-        echo '<tr>';
-        echo '<td valign="top"><div align="left">Age:</div></td>';
-        echo '<td valign="top">'.$age.'</td>';
-        echo '</tr>';
-
-
-        echo '<tr>';
-        echo '<td valign="top"><div align="left">Location:</div></td>';
-        echo '<td valign="top">'.$location.'</td>';
-        echo '</tr>';
-        echo '<tr>';
-
-
-        echo '<tr>';
-        echo '<td valign="top"><div align="left">Occupation:</div></td>';
-        echo '<td valign="top">'.$occupation.'</td>';
-        echo '</tr>';
-        echo '<tr>';
-        echo '<td valign="top"><div align="left">Email: </div></td>';
-        echo '<td valign="top">'.$email.'</td>';
-        echo '</tr>';
-        echo '</table>';
-        echo '<p align="center"><a href="index.php"></a></p>';
-        echo '</tr>';
-        echo '<tr>';
-        echo '<td width="129" rowspan="5"><img src="'. $picture.'" width="129" height="129" alt="no image found"/></td>';
-
-        echo '<form action="upload_file.php" method="post"
-                enctype="multipart/form-data">
-                <label for="file">Filename:</label>
-                <input type="file" name="file" id="file"><br>
-                <input type="submit" name="submit" value="Submit">
-                </form>';
 
 
     }else{
@@ -105,57 +104,48 @@
         $picture= "../resources/profiles/" . $row3['picture'];
         $gender=$row3['gender'];
         $age= $row3['age'];
-         echo '<div><a href="../list_mentor_mentee_pages/mentor_mentee_list.php">View mentors</a></p></div>';
-
-        echo '<table width="900" border="0" align="left" cellpadding="0">';
-        echo  '<tr>';
-        echo '<td height="26" colspan="2">Your Profile Information </td>';
-        echo '<td><div align="right">  <form method="post" action="index.php">
-        <input name="logout" type="submit" value="Logout" />
-      </form></div></td>';
-        echo '<tr>';
-
-        echo  '<tr>';
-        echo '<td height="26" colspan="2">Contact mentors </td>';
-        echo '<td><div align="right"><a href="../messengerPage/WEB_PROJECT/messenger_2.php">Messenger</a></div></td>';
-        echo '<tr>';
-        echo '<td width="82" valign="top"><div align="left">Name:</div></td>';
-        echo '<td width="165" valign="top">'.$name.'</td>';
-        echo '</tr>';
-
-        echo '<tr>';
-        echo '<td valign="top"><div align="left">Gender:</div></td>';
-        echo '<td valign="top">'.$gender.'</td>';
-        echo '</tr>';
-
-        echo '<tr>';
-        echo '<td valign="top"><div align="left">Age:</div></td>';
-        echo '<td valign="top">'.$age.'</td>';
-        echo '</tr>';
 
 
-        echo '<tr>';
-        echo '<td valign="top"><div align="left">Location:</div></td>';
-        echo '<td valign="top">'.$location.'</td>';
-        echo '</tr>';
-        echo '<tr>';
 
-        echo '<tr>';
-        echo '<td valign="top"><div align="left">Email: </div></td>';
-        echo '<td valign="top">'.$email.'</td>';
-        echo '</tr>';
-        echo '</table>';
-        echo '<p align="center"><a href="profile.php"></a></p>';
-        echo '</tr>';
-        echo '<tr>';
-        echo '<td width="129" rowspan="5"><img src="'. $picture.'" width="129" height="129" alt="no image found"/></td>';
+        echo '<div id="navbar" class="white_bg shadow_bottom">
+            <div id="logo">
+              <div id="logo_image">
+                <a href="../landing_page/index.php"><img src="../resources/logo.png"/ width="25%" > LYBL</a>
+              </div>
+            </div>
+            <div id="navigation">
+              <div id="navigation_links">
+                <button value="../messengerPage/WEB_PROJECT/messenger_2.php" class="navigation_button citrus">
+                  Messenger
+                </button>
+                <button value="../list_mentor_mentee_pages/mentor_mentee_list.php" class="navigation_button citrus">
+                  Mentors
+                </button>
+                <form method="post" action="profile.php" style="display: inline-block">
+                  <input class="navigation_button" name="logout" type="submit" value="Logout" />
+                </form>
+              </div>
+            </div>
+          </div>
+          <div id="content">';
 
-        echo '<form action="upload_file.php" method="post"
-                enctype="multipart/form-data">
-                <label for="file">Filename:</label>
-                <input type="file" name="file" id="file"><br>
-                <input type="submit" name="submit" value="Submit">
-                </form>';
+          echo '<div id="profile">
+                  <div id="profile_left">
+                    <img src='. $picture.' width="250em" height="250em" alt="no image found"/>
+                  </div>
+                  <div id="profile_right">
+                    <h1 id="name">'.$name."'s Information</h1>
+                    <h2 class='profile_info'>Age: ".$age.'</h2>
+                    <h2 class="profile_info">Gender: '.$gender.'</h2>
+                    <h2 class="profile_info">Email: '.$email.'</h2>
+                    <h2 class="profile_info">Location: '.$location.'</h2>
+                  </div>
+                  <form action="upload_file.php" method="post"
+                    enctype="multipart/form-data">
+                    <input type="file" name="file" id="file"><br>
+                    <input class="upload_button" type="submit" name="submit" value="Submit">
+                  </form>
+                </div>';
     }
 
 
@@ -178,12 +168,8 @@
 
 
 ?>
-
-
-<head>
-  <title>Term Project: Profile Page</title>
-  <link rel="stylesheet" href="./login%2520page/static/semantic.min.css">
-  <link rel="stylesheet" href="./login%20page/static/login_style.css">
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
-
-</head>
+  </div>
+  <script src="../landing_page/jquery.min.js"></script>
+  <script src="../landing_page/index.js"></script>
+</body>
+</html>

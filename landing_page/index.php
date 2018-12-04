@@ -11,7 +11,18 @@
   </head>
   <body>
     <div id="navbar" class="white_bg shadow_bottom">
-
+      <div id="logo">
+        <div id="logo_image">
+          <a href="index.php"><img src="../resources/logo.png"/ width="25%" > LYBL</a>
+        </div>
+      </div>
+      <div id="navigation">
+        <div id="navigation_links">
+          <button value="../login%20page/homepage.html" class="navigation_button">
+            Login/Register
+          </button>
+        </div>
+      </div>
     </div>
     <div class="content">
       <div class="banner">
@@ -32,7 +43,7 @@
           <img src="https://www.buttecounty.net/portals/11/383008_144111739031249_123902809_n.jpg" alt="after foster care" width="65%"/>
         </span>
         <span class="information_content blueberry">
-          <h1 class="info_title citrus_text">Life After The Foster Care Can Be Scary,<br/>Let Us Help You Through This Process</h1>
+          <h1 class="info_title white_text">Life After The Foster Care Can Be Scary,<br/>Let Us Help You Through This Process</h1>
         </span>
       </div>
       <div id="images" class="section blueberry" style="margin-bottom:-17em; position:relative; top:-15em; margin-bottom: 1em">
@@ -90,8 +101,8 @@
         </div>
       </div>
       </div>
-      <div id="carousel_images" class="images_button blueberry">Carousel</div>
-      <div id="mentors" class="images_button citrus">Mentors</div>
+      <div id="carousel_images" class="images_button blueberry white_text">Slideshow</div>
+      <div id="mentors" class="images_button citrus white_text">Mentors</div>
       </div>
     <!-- <div id="content">
       <div class="section blueberry shadow_top">

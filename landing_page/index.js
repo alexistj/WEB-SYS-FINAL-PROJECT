@@ -25,4 +25,11 @@ $(document).ready(function(){
     $("#mentor_images").addClass("image_inactive");
     $("#images").removeClass("citrus").addClass("blueberry");
   });
+  navigation_links = document.getElementsByClassName("navigation_button");
+  for(var i=0; i<navigation_links.length; i++){
+    $(navigation_links[i]).click(function(){
+      let link = $(this).attr("value");
+      window.location.href = link;
+    });
+  };
 });

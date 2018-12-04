@@ -18,13 +18,13 @@
 
 /* text colors */
 .apricot{
-  background-color: #f7882F;
+  background-color: #f7882F !important;
 }
 .blueberry{
-  background-color: #687ABF;
+  background-color: #687ABF !important;
 }
 .citrus{
-  background-color: #F7C331;
+  background-color: #F7C331 !important;
 }
 
 .apple_core_text{
@@ -47,24 +47,82 @@ html, body{
     height: 6vh;
     position: fixed;
     top: 0;
-    width: 100%;
+    width: 100vw;
     overflow: hidden;
     z-index: 10;
     margin-bottom: 0 !important;
     margin: auto;
 }
+#logo{
+  display:inline-block;
+  width: 30vh;
+  padding-left: 3vh;
+  height: 6vh;
+}
+#logo_image{
+  width: 21vh;
+  background-color:#F7C331;
+  padding-left: 2vh;
+  height: 5vh;
+  position: relative;
+  top: 0.5vh;
+  font-size: 2.5vw;
+  text-decoration: none;
+}
+#logo_image a:link{
+  color: white;
+  text-decoration: none;
+}
+#logo_image a:hover{
+  color: white;
+  text-decoration: none;
+}
+#logo_image a:visited{
+  color: white;
+  text-decoration: none;
+}
+#navigation{
+  display:inline-block;
+  float: right;
+  width: 50vw;
+  height: 6vh;
+  padding-top: 0.5vh;
+  padding-right: 3vh;
+  margin: 0;
+}
+#navigation_links{
+  float: right;
+  padding-top: 0.5vh;
+}
+.navigation_button{
+  background-color: #687ABF;
+  border: none;
+  color: white;
+  padding: 1vh 2vh;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 0.9vw;
+  margin-left: 0.3vw;
+  border-radius: 1.5vw;
+}
+.navigation_button:hover{
+  opacity: 0.5;
+  cursor: pointer;
+}
 #content{
     width: 100em;
-    margin-top: 6vh;
+    padding-top: 6vh;
     margin: auto;
+
 }
 #footer{
     margin-top: 5em;
     position: relative;
     left: 0;
     height: 10em;
-    width: 105em;
-    margin: auto;
+    width: 100%;
+    overflow: hidden;
 }
 .section{
     width: 100%;
@@ -200,6 +258,7 @@ html, body{
     width: 30%;
     height: 20em;
     margin: 0;
+    border-radius: 1em;
 }
 .index_title{
     padding-left: 0.5em;
@@ -209,7 +268,9 @@ html, body{
 .index_page_description{
     display: inline-block;
     box-sizing: border-box;
-    border: solid black 0.2em;
+    border: solid #687ABF 0.2em;
+    background-color:  rgba(255, 176, 37, 0.2);
+    border-radius: 0.5em;
     width: 69%;
     height: 20em;
     margin: 0;
@@ -247,6 +308,7 @@ html, body{
   width: 20em;
 }
 .info_title{
+  padding-top: 0.5em;
   font-size: 2.5em;
   margin-bottom: 0;
 }
@@ -289,9 +351,6 @@ html, body{
 .image_inactive{
   display: none;
 }
-
-/* END PAGE SPECIFIC */
-
 #images{
   width: 95em;
   margin: auto;
@@ -312,4 +371,57 @@ html, body{
   padding: .5em 0;
   font-size: 1.5em;
   text-align: center;
+  cursor: pointer;
+}
+
+/* PROFILE.PHP */
+
+#profile{
+  top: 5vh;
+  position: relative;
+  background-color: #687ABF;
+  width: 60em;
+  margin: auto;
+  border-radius: 2em;
+  padding: 3em;
+  padding-bottom: 6em !important;
+  height: 20em;
+}
+#profile_left{
+  background-color: #F7C331;
+  width: 15.5em;
+  height: 15.5em;
+  display: inline-block;
+  position: absolute;
+  padding: 2em;
+  border-radius: 1.5em 0.5em 0.5em 0.5em;
+
+}
+#profile_right{
+  position: relative;
+  left: 25em;
+  width: 60%;
+  display: inline-block;
+  color: white;
+  padding-left: 5%;
+  height: 20em;
+}
+#name{
+  text-decoration: underline;
+}
+.upload_button{
+  background-color: white;
+  border: none;
+  color: #687ABF;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 0.5em;
+  padding: 0.5em;
+  border-radius: 1em 0.5em;
+}
+.upload_button:hover{
+  cursor: pointer;
+}
+#file{
+  color: white;
 }
