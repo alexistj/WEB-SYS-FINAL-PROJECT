@@ -251,13 +251,22 @@ html, body{
   width: 100%;
 }
 .form_fields{
-  padding: 2em;
+  padding: 4em;
+  padding-top: 1.5em;
   padding-bottom: 1em;
   font-size: 1.5em;
   color: white;
 }
+.radios{
+  margin: auto;
+  width: 10em;
+}
+.radios input{
+  float: none !important;
+}
 .form_fields input{
   border-radius: 0.5em;
+  float: right;
 }
 .form_buttons{
   width: 20em;

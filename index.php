@@ -58,7 +58,7 @@
             </div>
             <form class="form" action="create_account_action.php" method="post">
               <div class="form_fields">
-              <div>
+              <div class="radios">
                 <label class="radio-inline">
                   <input value="mentor" name="listSelect[]" type="radio" name="optradio" checked>Mentor
                 </label>
