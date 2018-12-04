@@ -168,13 +168,13 @@
       session_destroy();
       $err = 'You have been logged out.';
         echo $err;
-        header("Location: homepage.html");
+        header("Location: index.php");
 
     }
 
 ?>
   </div>
-  
+
   <script src="resources/js/jquery.min.js"></script>
   <script src="resources/js/index.js"></script>
 </body>

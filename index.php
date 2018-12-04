@@ -18,13 +18,92 @@
       </div>
       <div id="navigation">
         <div id="navigation_links">
-          <button value="homepage.html" class="navigation_button">
+          <button value="homepage.html" id="modal_button">
             Login/Register
           </button>
         </div>
       </div>
     </div>
-    <div class="content">
+    <div id="modal" class="hidden">
+
+        <div class="modal_wrapper">
+          <div id="login" class="input-form blueberry">
+            <div class="modal_nav">
+              <button  class="modal_login modal_nav_button blueberry">Login</button>
+              <button  class="modal_register modal_nav_button citrus">Register</button>
+              <button  class="modal_close modal_nav_button apricot">&times;</button>
+            </div>
+            <form class="form" action="login_account_action.php" method="post">
+              <div class="form_fields">
+              <label for="uname"><b>Email:</b></label>
+              <input type="text" placeholder="Enter your email" name="uname" required><br/>
+
+              <label for="psw"><b>Password:</b></label>
+              <input type="password" placeholder="Enter Password" name="psw" required><br/>
+            </div>
+              <div class="form_buttons">
+                <button  class="submit form_button citrus" name="login" value="Login">Submit</button>
+                <button  type="button" class="cancel form_button citrus">Cancel</button>
+              </div>
+            </form>
+
+          </div>
+        </div>
+        <div class="modal_wrapper">
+          <div id="register" class="input-form hidden citrus" method="post">
+            <div class="modal_nav">
+              <button  class="modal_login modal_nav_button blueberry">Login</button>
+              <button  class="modal_register modal_nav_button citrus">Register</button>
+              <button  class="modal_close modal_nav_button apricot">&times;</button>
+            </div>
+            <form class="form" action="create_account_action.php" method="post">
+              <div class="form_fields">
+              <div>
+                <label class="radio-inline">
+                  <input value="mentor" name="listSelect[]" type="radio" name="optradio" checked>Mentor
+                </label>
+                <label class="radio-inline">
+                  <input value="mentee" name="listSelect[]" type="radio" name="optradio">Mentee
+                </label>
+              </div>
+
+              <label for="username"><b>Username:</b></label>
+              <input type="text" placeholder="Enter Username" name="username" required><br/>
+
+              <label for="password"><b>Password:</b></label>
+              <input type="password" placeholder="Enter Password" name="password" required><br/>
+
+              <label for="password_2"><b>Password:</b></label>
+              <input type="password" placeholder="Enter Password Again" name="password_2" required><br/>
+
+              <label for="email"><b>Email:</b></label>
+              <input type="text" placeholder="Enter Email" name="email" required><br/>
+
+              <label for="age"><b>Age:</b></label>
+              <input type="number" placeholder="Enter Age" name="age" required><br/>
+
+              <label for="gender"><b>Gender:</b></label>
+              <input type="text" placeholder="Enter Gender" name="gender" required><br/>
+
+              <label for="occupation"><b>Occupation:</b></label>
+              <input type="text" placeholder="Enter Occupation" name="occupation" required><br/>
+
+              <label for="location"><b>Location:</b></label>
+              <input type="text" placeholder="Enter Your Location" name="location" required><br/>
+            </div>
+              <div class="form_buttons">
+                <button  class="submit form_button blueberry" name="login" value="Login">Submit</button>
+                <button  type="button" class="cancel form_button blueberry">Cancel</button>
+              </div>
+
+
+            </form>
+
+          </div>
+        </div>
+
+    </div>
+    <div id="content">
       <div class="banner">
         <div class="banner_content">
           <span class="banner_left">

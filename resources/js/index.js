@@ -32,4 +32,37 @@ $(document).ready(function(){
       window.location.href = link;
     });
   };
+  $('#modal_button').click(function(){
+    $("#modal").removeClass("hidden");
+    $("#content").addClass("modal_active");
+  });
+  close_buttons = document.getElementsByClassName("modal_close");
+  for(var i=0; i<close_buttons.length; i++){
+    $(close_buttons[i]).click(function(){
+      $("#modal").addClass("hidden");
+      $("#content").removeClass("modal_active");
+    });
+  };
+
+  login_buttons = document.getElementsByClassName("modal_login");
+  for(var i=0; i<login_buttons.length; i++){
+    $(login_buttons[i]).click(function(){
+      $("#login").removeClass("hidden");
+      $("#register").addClass("hidden");
+    });
+  };
+  register_buttons = document.getElementsByClassName("modal_register");
+  for(var i=0; i<register_buttons.length; i++){
+    $(register_buttons[i]).click(function(){
+      $("#register").removeClass("hidden");
+      $("#login").addClass("hidden");
+    });
+  };
+  cancel_buttons = document.getElementsByClassName("cancel");
+  for(var i=0; i<cancel_buttons.length; i++){
+    $(cancel_buttons[i]).click(function(){
+      $("#modal").addClass("hidden");
+      $("#content").removeClass("modal_active");
+    });
+  };
 });

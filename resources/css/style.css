@@ -191,6 +191,112 @@ html, body{
 /* style implemented on only one page */
 
 /* index */
+
+/* login and registration modal */
+.hidden{
+  display: none;
+}
+#modal{
+  position: fixed;
+  width: 100%;
+  z-index: 30;
+  opacity: 1 !important;
+}
+.modal_active{
+  overflow-y: hidden;
+  opacity: 0.3;
+}
+#modal_button{
+
+    background-color: #687ABF;
+    border: none;
+    color: white;
+    padding: 1vh 2vh;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 0.9vw;
+    margin-left: 0.3vw;
+    border-radius: 1.5vw;
+
+}
+#modal_button:hover{
+  cursor: pointer;
+}
+.modal_nav_button{
+  border: none;
+  color: white;
+  background-color: red;
+  padding: 1em 0;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 1em;
+  width: 45%;
+  margin:0;
+}
+.modal_nav_button:hover{
+  cursor:pointer;
+}
+.modal_close{
+  float:right;
+  width: 10% !important;
+  border-radius: 0 1em 0 0;
+}
+.modal_login{
+  float: left;
+  border-radius: 1em 0 0 0;
+}
+.form{
+  width: 100%;
+}
+.form_fields{
+  padding: 2em;
+  padding-bottom: 1em;
+  font-size: 1.5em;
+  color: white;
+}
+.form_fields input{
+  border-radius: 0.5em;
+}
+.form_buttons{
+  width: 20em;
+  margin: auto;
+}
+.form_button{
+  color: white;
+  padding: 1em;
+  font-size: 1em;
+  border: none;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 0.5em;
+
+}
+.submit{
+  float: left;
+}
+.cancel{
+  float: right;
+}
+
+#login{
+  position: relative;
+  width: 40rem;
+  margin: auto;
+  border-radius: 1em;
+  top: 15em;
+  height: 16em;
+}
+#register{
+  position: relative;
+  width: 40rem;
+  margin: auto;
+  top: 15em;
+  height: 28em;
+  border-radius: 1em
+}
+
 /* divs/ other elements */
 #index_intro_text{
     width: 90em;
@@ -439,7 +545,7 @@ html, body{
   position: relative;
   padding-top: 5em;
   top: 5vh;
-  width: 80em;
+  width: 90em;
   margin: auto;
 }
 #msg{
@@ -447,7 +553,7 @@ html, body{
 }
 #messages_left{
   width: 35%;
-  height: 30em;
+  height: 50em;
   background-color: #687ABF;
   color: white;
   display: inline-block;
@@ -457,7 +563,7 @@ html, body{
 }
 #messages_right{
   width: 52%;
-  height: 30em;
+  height: 50em;
   padding: 2em;
   background-color: rgba(6, 79, 186, 0.2);
   border-radius: 0 2em 2em 0;
@@ -479,6 +585,9 @@ html, body{
 .submit:hover{
   cursor: pointer;
 }
+.cancel:hover{
+  cursor: pointer;
+}
 .message{
   overflow:scroll;
   overflow-x: hidden;
@@ -487,6 +596,7 @@ html, body{
   positon: absolute;
   background-color: rgba(255, 255, 255, 0.8);
 }
+
 
 /* RESOURCES STYLING */
 #resourceList{
