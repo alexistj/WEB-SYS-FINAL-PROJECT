@@ -5,7 +5,7 @@
 <html>
   <head>
     <title>Living Your Best Life</title>
-    <link type="text/css" rel="stylesheet" href="style.css"/>
+    <link type="text/css" rel="stylesheet" href="resources/css/style.css"/>
     <link href="https://fonts.googleapis.com/css?family=Permanent+Marker" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet" type="text/css">
   </head>
@@ -13,12 +13,12 @@
     <div id="navbar" class="white_bg shadow_bottom">
       <div id="logo">
         <div id="logo_image">
-          <a href="index.php"><img src="resources/logo.png"/ width="25%" > LYBL</a>
+          <a href="index.php"><img src="resources/images/logo.png"/ width="25%" > LYBL</a>
         </div>
       </div>
       <div id="navigation">
         <div id="navigation_links">
-          <button value="../login%20page/homepage.html" class="navigation_button">
+          <button value="homepage.html" class="navigation_button">
             Login/Register
           </button>
         </div>
@@ -49,16 +49,16 @@
       <div id="images" class="section blueberry" style="margin-bottom:-17em; position:relative; top:-15em; margin-bottom: 1em">
       <div id="carousel" class="images_inactive">
         <?php
-          $dir = "images/";
+          $dir = "resources/images/images";
           $count = 0;
           if(is_dir($dir)){
             if($dh = opendir($dir)){
               while(($file = readdir($dh)) != false){
-                if (strpos($file, 'jpg')) {
+                if (strpos($file, 'jpg') || strpos($file, 'jpeg') || strpos($file, 'png')) {
                   if($count == 0){
-                    echo "<img class='carousel_image' src='images/$file' id='active' width='70%'/>" ;
+                    echo "<img class='carousel_image' src='$dir/$file' id='active' width='70%'/>" ;
                   }else{
-                    echo "<img class='carousel_image' src='images/$file' width='70%'/>" ;
+                    echo "<img class='carousel_image' src='$dir/$file' width='70%'/>" ;
                   }
                   $count += 1;
                 }
@@ -117,7 +117,7 @@
                   </div>
 
       </div> -->
-    <div class="section" style=" position: relative; top: -10em ; margin-bottom: 0;">
+    <div class="section" style=" position: relative; top: -10em ; margin-bottom: -10em;">
 	     <div class="index_page_content">
 	        <h1 class="title  remove_margin">What Can We Offer</h1><br/>
 	         <hr class="hr_xlarge red_hr remove_margin"/>
@@ -146,10 +146,11 @@
 	</div>
       </div>
     </div>
-    <div id="footer" class="blueberry">
 
+    <div id="footer" class="blueberry">
+      <h1 id="footer_text" class="apple_core_text">@Copyright 2018</h1>
     </div>
-    <script src="jquery.min.js"></script>
-    <script src="index.js"></script>
+    <script src="resources/js/jquery.min.js"></script>
+    <script src="resources/js/index.js"></script>
   </body>
 </html>

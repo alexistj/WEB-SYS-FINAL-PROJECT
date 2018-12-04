@@ -13,7 +13,7 @@ $(document).ready(function(){
     count += 1;
     image_number = count % carousel.length;
     carousel[image_number].setAttribute("id", "active");
-  }, 3000);
+  }, 7000);
   images = document.getElementById("images");
   $("#mentors").click(function(){
     $("#mentor_images").removeClass("image_inactive");

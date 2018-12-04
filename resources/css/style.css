@@ -120,9 +120,12 @@ html, body{
     margin-top: 5em;
     position: relative;
     left: 0;
-    height: 10em;
+    height: 5em;
     width: 100%;
     overflow: hidden;
+}
+#footer_text{
+  text-align: center;
 }
 .section{
     width: 100%;
@@ -340,6 +343,8 @@ html, body{
 #carousel{
   margin: auto;
   height: 100%;
+  padding-top: 3em;
+  margin-bottom: -3em !important;
 }
 .carousel_image{
   display:none;
@@ -423,6 +428,7 @@ html, body{
 }
 .upload_button:hover{
   cursor: pointer;
+  background-color: rgba(255,255,255,0.8);
 }
 #file{
   color: white;
@@ -479,5 +485,71 @@ html, body{
   width: 90%;
   height: 40%;
   positon: absolute;
-  background-color: rgba(6, 79, 186, 0.3);
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* RESOURCES STYLING */
+#resourceList{
+  position: relative;
+  top: 5vh;
+  width: 95em;
+  margin: auto;
+  padding-top: 3em;
+}
+.resource_entry{
+  width: 90em;
+  padding: 2em;
+  border-radius: 2em;
+  margin: auto;
+  border: solid black 0.1em;
+  margin-bottom: 2em !important;
+}
+.resource_1{
+  background-color: rgba(6, 79, 186, 0.2);
+}
+.resource_2{
+  background-color: rgba(255, 176, 37, 0.2);
+}
+
+/* MENTOR MENTEE LIST STYLING */
+#mentor_mentee_list{
+  position: relative;
+  top: 5vh;
+  margin: auto;
+  padding-top: 2em;
+}
+#mentor_mentee_title{
+  text-align: center;
+  font-size: 3em;
+}
+.mentor_mentee{
+  background-color:#f7882F;
+  width: 60em;
+  margin: auto;
+  border-radius: 2em;
+  padding: 3em;
+  height: 20em;
+  margin-bottom: 3em !important;
+}
+.mentor_mentee_left{
+  background-color: #687ABF;
+  width: 15.5em;
+  height: 15.5em;
+  display: inline-block;
+  position: absolute;
+  padding: 2em;
+  border-radius: 1.5em 0.5em 0.5em 0.5em;
+
+}
+.mentor_mentee_right{
+  position: relative;
+  left: 25em;
+  width: 60%;
+  display: inline-block;
+  color: white;
+  padding-left: 5%;
+  height: 20em;
+}
+#name{
+  text-decoration: underline;
 }

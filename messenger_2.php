@@ -8,26 +8,30 @@
   <style>
     .error {color: #FF0000;}
   </style>
-  <link rel="stylesheet" href="../../landing_page/style.css"/>
+  <link rel="stylesheet" href="resources/css/style.css"/>
 </head>
 <body onload="ClearForm()">
   <div id="navbar" class="white_bg shadow_bottom">
       <div id="logo">
         <div id="logo_image">
-          <a href="../../landing_page/index.php"><img src="../../resources/logo.png"/ width="25%" > LYBL</a>
+          <a href="index.php"><img src="resources/images/logo.png"/ width="25%" > LYBL</a>
         </div>
       </div>
       <div id="navigation">
         <div id="navigation_links">
-          <button value="../messengerPage/WEB_PROJECT/messenger_2.php" class="navigation_button citrus">
+          <button value="profile.php" class="navigation_button apricot">
+            Profile
+          </button>
+          <button value="messenger_2.php" class="navigation_button citrus">
             Messenger
           </button>
-          <button value="../list_mentor_mentee_pages/mentor_mentee_list.php" class="navigation_button citrus">
-            Mentees
+          <button value="resources.html" class="navigation_button citrus">
+            Resources
           </button>
-          <form method="post" action="../../login20%page/profile.php" style="display: inline-block">
+          <form method="post" action="profile.php" style="display: inline-block">
             <input class="navigation_button" name="logout" type="submit" value="Logout" />
           </form>
+        </div>
         </div>
       </div>
     </div>
@@ -189,6 +193,7 @@
 ?>
 </div>
 </div>
+
     <script type="text/javascript" language="javascript">
 
       function ClearForm() {
@@ -197,8 +202,8 @@
         }
       }
     </script>
-    <script src="../../landing_page/jquery.min.js"></script>
-    <script src="../../landing_page/index.js"></script>
+    <script src="resources/js/jquery.min.js"></script>
+    <script src="resources/js/index.js"></script>
   </body>
 
 </html>

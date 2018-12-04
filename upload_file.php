@@ -3,7 +3,7 @@
     session_start();
 
     // Connect to the database
-    @ $db = new mysqli('localhost', 'root', 'lybl', 'lybl');
+    @ $db = new mysqli('localhost', 'root', '', 'lybl');
     if ($db->connect_error) {
         echo '<div class="messages">Could not connect to the database. Error: ';
         echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
@@ -25,7 +25,7 @@
             echo "Error: " . $_FILES["file"]["error"] . "<br>";
         } else {
 
-            if (move_uploaded_file( $_FILES['file']['tmp_name'], "../resources/profiles/" . basename($_FILES['file']['name']))) {
+            if (move_uploaded_file( $_FILES['file']['tmp_name'], "resources/images/profiles/" . basename($_FILES['file']['name']))) {
                 $id =   $_SESSION['id'];
                 $sql = 'SELECT * FROM `members` WHERE `id` =" ' . $id . '"';
                 $userResult = $db->query($sql);
@@ -38,7 +38,9 @@
 
                     $sql = 'UPDATE `mentors` SET picture="' . $_FILES["file"]["name"] . '" WHERE id="' . $id . '"';
                     if ($db->query($sql) === TRUE) {
-                        echo "Picture updated successfully";
+                      echo '<script type="text/javascript">
+                        window.location = "profile.php"
+                      </script>';
                     } else {
                         echo "Error updating record: " . $db->error;
                     }
@@ -50,6 +52,9 @@
                     $sql = 'UPDATE `mentees` SET picture="' . $_FILES["file"]["name"] . '" WHERE id="' . $id . '"';
                     if ($db->query($sql) === TRUE) {
                         echo "Picture updated successfully";
+                        echo '<script type="text/javascript">
+                          window.location = "profile.php"
+                        </script>';
                     } else {
                         echo "Error updating record: " . $db->error;
                     }
