@@ -3,7 +3,7 @@
     session_start();
     $host = "localhost";
     $user = "root";
-    $pass = "";
+    $pass = "lybl";
     $dbname="lybl";
     $db =new PDO("mysql:host=".$host.";dbname=$dbname;",$user,$pass);
 
@@ -13,8 +13,8 @@
             echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
       }
       */
-    
-    
+
+
 
     $id=   $_SESSION['id'];
     $sql = 'SELECT * FROM `members` WHERE `id` =" ' . $id . '"';
@@ -22,9 +22,9 @@
     $row3 = $pstmt->fetchAll();
 
 
-    
+
     if( $row3[0]['mentor'] == 0){
-        
+
         // Attempt insert query execution
         $sql = "SELECT * FROM mentors
         WHERE 1=1";
@@ -38,7 +38,7 @@
         }
         //Fetch all the results then output each row using foreach
         $data = $pstmt->fetchAll();
-   
+
         foreach($data as $row3 ) {
 
             $name=$row3['name'];
@@ -72,14 +72,14 @@
             echo '<td valign="top">'.$location.'</td>';
             echo '</tr>';
             echo '<tr>';
-            
-            
+
+
             echo '<tr>';
             echo '<td valign="top"><div align="left">Occupation:</div></td>';
             echo '<td valign="top">'.$occupation.'</td>';
             echo '</tr>';
             echo '<tr>';
-            
+
             echo '<tr>';
             echo '<td valign="top"><div align="left">Number of Mentees:</div></td>';
             echo '<td valign="top">'.$num_mentees.'</td>';
@@ -101,11 +101,11 @@
             echo '<br>';
         }
     }
-        
+
         else{
-            
-            
-            
+
+
+
             // Attempt insert query execution
             $sql = "SELECT * FROM mentees
             WHERE 1=1";
@@ -121,7 +121,7 @@
             $data = $pstmt->fetchAll();
 
             foreach($data as $row3 ) {
-       
+
             //Fetch all the results then output each row using foreach
             //$data = $pstmt->fetchAll();
             $name=$row3['name'];
@@ -169,8 +169,8 @@
             echo '<br>';
          }
         }
-        
-    
+
+
 
 
     // Logout
@@ -184,9 +184,9 @@
       $err = 'You have been logged out.';
         echo $err;
         header("Location: homepage.html");
-    
+
     }
-    
+
 
 
 

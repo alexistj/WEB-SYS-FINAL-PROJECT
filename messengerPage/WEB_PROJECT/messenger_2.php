@@ -2,7 +2,7 @@
 <!-- https://www.youtube.com/watch?v=n35Jn2nP9iU -->
 
 
-<!DOCTYPE HTML>  
+<!DOCTYPE HTML>
 <html>
 <?php
   if(isset($_POST['submit']))
@@ -10,7 +10,7 @@
   if( !empty($_POST)){
 
     //websysproject is the name of the database i have used and connected to. Please change it so that it connects to the group database
-    $mysqli = new mysqli('localhost','root', '', 'lybl');
+    $mysqli = new mysqli('localhost','root', 'lybl', 'lybl');
     date_default_timezone_set('America/New_York');
     $date = date('m/d/Y');
     $time = date("h:i:sa");
@@ -39,17 +39,17 @@
       $sqlquery = "SELECT * from lybl.messenger where SenderEmail ='".$sender."' AND ReceiverEmail = '".$receiver."'";
       $result = $mysqli->query($sqlquery);
 
-      
-      
+
+
       if(!$result)
       {
         echo "<br>";
         echo "FAILURE!";
       }
-      
+
       $count = mysqli_num_rows($result);
-      
-      if($count > 0){ 
+
+      if($count > 0){
         for ($i=0; $i < $count; $i++){
           $record = $result->fetch_assoc();
 
@@ -60,9 +60,12 @@
           echo $record["Message"];
           echo '"';
           echo " to ";
-          while ($row = $name1->fetch_assoc()) {
+          /*
+          while ($row == $name1->fetch_assoc()) {
             echo $row['name'];
           }
+          */
+
           echo " at ".$record["Time"]." on ".$record["Date"];
           echo "<br>";
         }
@@ -75,7 +78,7 @@
       $name1 = $mysqli->query($sql);
 
       //websysproject.pratice2 is the 'members' table of the group database
-    $sql = "SELECT name FROM lybl.members WHERE email = '".$receiver."'";
+      $sql = "SELECT name FROM lybl.members WHERE email = '".$receiver."'";
       $name2 = $mysqli->query($sql);
 
       echo "<br>";
@@ -111,9 +114,11 @@
             echo $record2["Message"];
             echo '"';
             echo " to ";
+            /*
             while ($row2 = $name2->fetch_assoc()) {
               echo $row2['name'];
             }
+            */
             echo " at ".$record2["Time"]." on ".$record2["Date"];
             echo "<br>";
           }
@@ -137,13 +142,13 @@
       .error {color: #FF0000;}
     </style>
   </head>
-  <body onload="ClearForm()">  
+  <body onload="ClearForm()">
 
 
 
     <h2>Messenger Form</h2>
 
-    <form name = "messageForm" id = "messageForm" class = "messageForm" method="post" action="">  
+    <form name = "messageForm" id = "messageForm" class = "messageForm" method="post" action="">
 
 
       <label>
@@ -165,12 +170,12 @@
       <textarea id = "Message" name="Message" rows="5" cols="40" placeholder="Enter your message"></textarea>
       <br><br>
 
-      <input id="submit" type="submit" name="submit" value="Submit">  
+      <input id="submit" type="submit" name="submit" value="Submit">
 
     </form>
   </body>
   <script type="text/javascript" language="javascript">
-   
+
     function ClearForm() {
       if(document.getElementById) {
         document.messageForm.reset();

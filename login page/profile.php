@@ -2,7 +2,7 @@
 
     session_start();
 
-    @ $db = new mysqli('localhost', 'root', '', 'lybl');
+    @ $db = new mysqli('localhost', 'root', 'lybl', 'lybl');
       if ($db->connect_error) {
             echo '<div class="messages">Could not connect to the database. Error: ';
             echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
@@ -17,26 +17,26 @@
 
 
     if( $row3['mentor'] == 1){
-            $sql = 'SELECT * FROM `mentors` WHERE `id` =" ' . $id . '"';
-            $userResult = $db->query($sql);
-            echo $id;
-            $row3 = mysqli_fetch_array( $userResult );
+        $sql = 'SELECT * FROM `mentors` WHERE `id` =" ' . $id . '"';
+        $userResult = $db->query($sql);
+        echo $id;
+        $row3 = mysqli_fetch_array( $userResult );
 
-            $name=$row3['name'];
-            $location=$row3['location'];
-            $email=$row3['email'];
-            $picture= "../resources/profiles/" . $row3['picture'];
-            $gender=$row3['gender'];
-            $age= $row3['age'];
-            $occupation= $row3['occupation'];
-            $num_mentees= $row3['num_mentees'];
+        $name=$row3['name'];
+        $location=$row3['location'];
+        $email=$row3['email'];
+        $picture= "../resources/profiles/" . $row3['picture'];
+        $gender=$row3['gender'];
+        $age= $row3['age'];
+        $occupation= $row3['occupation'];
+        $num_mentees= $row3['num_mentees'];
         echo '<div><a href="../list_mentor_mentee_pages/mentor_mentee_list.php">View mentees</a></div>';
         echo '<table width="900" border="0" align="left" cellpadding="0">';
         echo  '<tr>';
         echo '<td height="26" colspan="2">Your Profile Information </td>';
         echo '<td><div align="right"><div align="right">  <form method="post" action="profile.php">
         <input name="logout" type="submit" value="Logout" />
-      </form></div></td>';
+        </form></div></td>';
         echo '<tr>';
 
 
@@ -89,6 +89,7 @@
                 <input type="submit" name="submit" value="Submit">
                 </form>';
 
+        echo '<a href = "../resources_page/resources.html">Resources</a>';
 
     }else{
 
@@ -112,7 +113,7 @@
         echo '<td height="26" colspan="2">Your Profile Information </td>';
         echo '<td><div align="right">  <form method="post" action="index.php">
         <input name="logout" type="submit" value="Logout" />
-      </form></div></td>';
+        </form></div></td>';
         echo '<tr>';
 
         echo  '<tr>';
@@ -156,6 +157,8 @@
                 <input type="file" name="file" id="file"><br>
                 <input type="submit" name="submit" value="Submit">
                 </form>';
+
+        echo '<a href = "../resources_page/resources.html">Resources</a>';
     }
 
 
@@ -173,9 +176,6 @@
         header("Location: homepage.html");
 
     }
-
-
-
 
 ?>
 

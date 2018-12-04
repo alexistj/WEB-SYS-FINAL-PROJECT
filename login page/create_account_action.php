@@ -1,5 +1,5 @@
 <?php
-    @ $db = new mysqli('localhost', 'root', '', 'lybl');
+    @ $db = new mysqli('localhost', 'root', 'lybl', 'lybl');
     if ($db->connect_error) {
         echo '<div class="messages">Could not connect to the database. Error: ';
         echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
@@ -44,8 +44,12 @@
                         if(!mysqli_query($db, $query)){
                              printf("Errormessage: %s\n", mysqli_error($db));
                         }
-
-                        header("Location: homepage.html");
+                        //echo "<script type='text/javascript'>alert('Register successful');</script>";
+                        //header("Location: homepage.html");
+                        echo "<script>
+                            alert('Register successful');
+                            window.location.href='homepage.html';
+                            </script>";
                     } else {
                         $query = "INSERT INTO members (name, age, email, location, gender, password, mentor)
                       			  VALUES('$name', '$age', '$email', '$location', '$gender',  '$password_1', 0)";
@@ -61,8 +65,12 @@
                         $query = "INSERT INTO mentees (id,name, age, email, location, gender, password)
                       			  VALUES('$id','$name', '$age', '$email', '$location', '$gender',  '$password_1')";
                         mysqli_query($db, $query);
-
-                        header("Location: homepage.html");
+                        //echo "<script type='text/javascript'>alert('Register successful');</script>";
+                        //header("Location: homepage.html");
+                        echo "<script>
+                            alert('Register successful');
+                            window.location.href='homepage.html';
+                            </script>";
                     }
                 }
             } else {
