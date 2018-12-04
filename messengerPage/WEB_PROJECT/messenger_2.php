@@ -2,8 +2,65 @@
 <!-- https://www.youtube.com/watch?v=n35Jn2nP9iU -->
 
 
-<!DOCTYPE HTML>  
+<!DOCTYPE HTML>
 <html>
+<head>
+  <style>
+    .error {color: #FF0000;}
+  </style>
+  <link rel="stylesheet" href="../../landing_page/style.css"/>
+</head>
+<body onload="ClearForm()">
+  <div id="navbar" class="white_bg shadow_bottom">
+      <div id="logo">
+        <div id="logo_image">
+          <a href="../../landing_page/index.php"><img src="../../resources/logo.png"/ width="25%" > LYBL</a>
+        </div>
+      </div>
+      <div id="navigation">
+        <div id="navigation_links">
+          <button value="../messengerPage/WEB_PROJECT/messenger_2.php" class="navigation_button citrus">
+            Messenger
+          </button>
+          <button value="../list_mentor_mentee_pages/mentor_mentee_list.php" class="navigation_button citrus">
+            Mentees
+          </button>
+          <form method="post" action="profile.php" style="display: inline-block">
+            <input class="navigation_button" name="logout" type="submit" value="Logout" />
+          </form>
+        </div>
+      </div>
+    </div>
+
+    <div id="messages">
+      <div id="messages_left">
+  <h2 id="msg">Messenger Form</h2>
+
+  <form name = "messageForm" id = "messageForm" class = "messageForm" method="post" action="">
+
+
+    <label>
+      <span>Sender email:</span>
+    </label>
+    <input id="sender" type="text" name="sender">
+    <br><br>
+
+
+    <label>
+      <span>Receiver email:</span>
+    </label>
+    <input id="receiver" type="text" name="receiver">
+    <br><br>
+
+
+    <textarea id = "Message" name="Message" rows="5" cols="40" placeholder="Enter your message"></textarea>
+    <br><br>
+
+    <input id="submit" type="submit" name="submit" value="Submit">
+
+  </form>
+</div>
+<div id="messages_right">
 <?php
   if(isset($_POST['submit']))
   {
@@ -39,17 +96,17 @@
       $sqlquery = "SELECT * from lybl.messenger where SenderEmail ='".$sender."' AND ReceiverEmail = '".$receiver."'";
       $result = $mysqli->query($sqlquery);
 
-      
-      
+
+
       if(!$result)
       {
         echo "<br>";
         echo "FAILURE!";
       }
-      
+
       $count = mysqli_num_rows($result);
-      
-      if($count > 0){ 
+
+      if($count > 0){
         for ($i=0; $i < $count; $i++){
           $record = $result->fetch_assoc();
 
@@ -132,49 +189,18 @@
   }
 }
 ?>
-  <head>
-    <style>
-      .error {color: #FF0000;}
-    </style>
-  </head>
-  <body onload="ClearForm()">  
+</div>
+</div>
+    <script type="text/javascript" language="javascript">
 
-
-
-    <h2>Messenger Form</h2>
-
-    <form name = "messageForm" id = "messageForm" class = "messageForm" method="post" action="">  
-
-
-      <label>
-        <span>Sender email:</span>
-      </label>
-      <input id="sender" type="text" name="sender">
-      <br><br>
-
-
-      <label>
-        <span>Receiver email:</span>
-      </label>
-      <input id="receiver" type="text" name="receiver">
-      <br><br>
-
-      <label>
-        <span>Message:</span>
-      </label>
-      <textarea id = "Message" name="Message" rows="5" cols="40" placeholder="Enter your message"></textarea>
-      <br><br>
-
-      <input id="submit" type="submit" name="submit" value="Submit">  
-
-    </form>
-  </body>
-  <script type="text/javascript" language="javascript">
-   
-    function ClearForm() {
-      if(document.getElementById) {
-        document.messageForm.reset();
+      function ClearForm() {
+        if(document.getElementById) {
+          document.messageForm.reset();
+        }
       }
-    }
-  </script>
+    </script>
+    <script src="../../landing_page/jquery.min.js"></script>
+    <script src="../../landing_page/index.js"></script>
+  </body>
+
 </html>

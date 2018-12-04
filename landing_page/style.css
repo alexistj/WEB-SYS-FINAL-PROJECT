@@ -425,3 +425,51 @@ html, body{
 #file{
   color: white;
 }
+
+/* MESSENGER STYLING */
+#messages{
+  position: relative;
+  padding-top: 5em;
+  top: 5vh;
+  width: 80em;
+  margin: auto;
+}
+#msg{
+  font-size: 2em;
+}
+#messages_left{
+  width: 35%;
+  height: 30em;
+  background-color: #687ABF;
+  color: white;
+  display: inline-block;
+  position: absolute;
+  padding: 2em;
+  border-radius: 2em 0 0 2em;
+}
+#messages_right{
+  width: 52%;
+  height: 30em;
+  padding: 2em;
+  background-color: rgba(6, 79, 186, 0.2);
+  border-radius: 0 2em 2em 0;
+  border: solid rgba(0,0,0,0.2) 0.1em;
+  display: inline-block;
+  position: relative;
+  float: right;
+  overflow:scroll;
+  overflow-x: hidden;
+}
+#submit{
+  background-color: white;
+  border: none;
+  color: #687ABF;
+  text-align: center;
+  text-decoration: none;
+  margin-top: 0.5em;
+  padding: 0.5em 1em;
+  border-radius: 0.5em;
+}
+.submit:hover{
+  cursor: pointer;
+}
