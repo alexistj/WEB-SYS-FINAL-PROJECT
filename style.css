@@ -197,6 +197,8 @@ html, body{
 }
 #index_board_out{
     margin: auto;
+    position: relative;
+    top: 2em;
     padding: 2em;
     width: 60em;
     background-color: #DFE1E1;
@@ -457,8 +459,6 @@ html, body{
   display: inline-block;
   position: relative;
   float: right;
-  overflow:scroll;
-  overflow-x: hidden;
 }
 #submit{
   background-color: white;
@@ -472,4 +472,12 @@ html, body{
 }
 .submit:hover{
   cursor: pointer;
+}
+.message{
+  overflow:scroll;
+  overflow-x: hidden;
+  width: 90%;
+  height: 40%;
+  positon: absolute;
+  background-color: rgba(6, 79, 186, 0.3);
 }

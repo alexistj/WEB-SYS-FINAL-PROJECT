@@ -13,7 +13,7 @@
     <div id="navbar" class="white_bg shadow_bottom">
       <div id="logo">
         <div id="logo_image">
-          <a href="index.php"><img src="../resources/logo.png"/ width="25%" > LYBL</a>
+          <a href="index.php"><img src="resources/logo.png"/ width="25%" > LYBL</a>
         </div>
       </div>
       <div id="navigation">

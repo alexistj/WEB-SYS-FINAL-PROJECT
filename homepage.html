@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Term Project: Home Page</title>
+  <link rel="stylesheet" href="static/semantic.min.css">
+  <link rel="stylesheet" href="static/login_style.css">
+  <link rel="stylesheet" href="../landing_page/style.css">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+
+</head>
+
+
+<body>
+  <div id="navbar" class="white_bg shadow_bottom">
+    <div id="logo">
+      <div id="logo_image">
+        <a href="../landing_page/index.php"><img src="../resources/logo.png"/ width="25%" > LYBL</a>
+      </div>
+    </div>
+    <div id="navigation">
+      <div id="navigation_links">
+        <button value="../landing_page/index.php" class="navigation_button">
+          Home
+        </button>
+      </div>
+    </div>
+  </div>
+  <!--  <div id="cat-header" >
+      <h2><a href="#"><i class="fas fa-hands"></i> &nbsp L.Y.B.L.</a></h2>
+    </div>
+  -->
+
+
+    <div id="intro">
+      <div class="intro-title">Living Your Best Life</div>
+
+      <p>   After young adults grow out of the foster system, there are not many resources provided for them to receive an education or proper job training. With limited options, these young adults are at a disadvantage career and income-wise. LYBL is a site that connects them with mentors from various career fields, scholarship resources, and certification/training.</p>
+
+    </div>
+
+    <div id="login" class="input-form">
+      <form class="ui form" action="login_account_action.php" method="post">
+        <label for="uname"><b>Email:</b></label>
+        <input type="text" placeholder="Enter your email" name="uname" required>
+
+        <label for="psw"><b>Password:</b></label>
+        <input type="password" placeholder="Enter Password" name="psw" required>
+
+        <button id="sub" class="ui primary button" name="login" value="Login">Submit</button>
+      </form>
+      <button id="cancel" class="ui primary button">Cancel</button>
+    </div>
+
+    <div id="register" class="input-form" method="post">
+      <form class="ui form" action="create_account_action.php" method="post">
+
+        <div>
+          <label class="radio-inline">
+            <input value="mentor" name="listSelect[]" type="radio" name="optradio" checked>Mentor
+          </label>
+          <label class="radio-inline">
+            <input value="mentee" name="listSelect[]" type="radio" name="optradio">Mentee
+          </label>
+        </div>
+
+        <label for="username"><b>Username:</b></label>
+        <input type="text" placeholder="Enter Username" name="username" required>
+
+        <label for="password"><b>Password:</b></label>
+        <input type="password" placeholder="Enter Password" name="password" required>
+
+        <label for="password_2"><b>Password:</b></label>
+        <input type="password" placeholder="Enter Password Again" name="password_2" required>
+
+        <label for="email"><b>Email:</b></label>
+        <input type="text" placeholder="Enter Email" name="email" required>
+
+        <label for="age"><b>Age:</b></label>
+        <input type="number" placeholder="Enter Age" name="age" required>
+
+        <label for="gender"><b>Gender:</b></label>
+        <input type="text" placeholder="Enter Gender" name="gender" required>
+
+        <label for="occupation"><b>Occupation:</b></label>
+        <input type="text" placeholder="Enter Occupation" name="occupation" required>
+
+        <label for="location"><b>Location:</b></label>
+        <input type="text" placeholder="Enter Your Location" name="location" required>
+
+        <button id="submit" class="ui primary button">Submit</button>
+
+      </form>
+      <button id="cancel2" class="ui primary button">Cancel</button>
+    </div>
+
+    <div id="button-field">
+      <button id="loginbtn" class="ui primary button">
+        Log In
+          </button>
+      <button id="registerbtn" class="ui button" href="#">
+        Register
+      </button>
+    </div>
+
+
+
+</body>
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script type="text/javascript">
+  $(document).ready(function(){
+    $("#cancel").click(function() {
+        $("#intro").css("display", "inline");
+        $("#loginbtn").css("display", "inline");
+        $("#registerbtn").css("display", "inline");
+        $("#login").css("display", "none");
+    });
+    $("#cancel2").click(function() {
+        $("#intro").css("display", "inline");
+        $("#loginbtn").css("display", "inline");
+        $("#registerbtn").css("display", "inline");
+        $("#register").css("display", "none");
+    });
+    $("#loginbtn").click(function(){
+      $("#intro").css("display", "none");
+      $("#loginbtn").css("display", "none");
+      $("#registerbtn").css("display", "none");
+      $("#login").css("display", "inline");
+    });
+    $("#registerbtn").click(function() {
+      $("#intro").css("display", "none");
+      $("#loginbtn").css("display", "none");
+      $("#registerbtn").css("display", "none");
+      $("#register").css("display", "inline");
+    });
+  });
+
+</script>
+<script src="../landing_page/index.js"></script>
+</html>

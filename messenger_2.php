@@ -25,7 +25,7 @@
           <button value="../list_mentor_mentee_pages/mentor_mentee_list.php" class="navigation_button citrus">
             Mentees
           </button>
-          <form method="post" action="profile.php" style="display: inline-block">
+          <form method="post" action="../../login20%page/profile.php" style="display: inline-block">
             <input class="navigation_button" name="logout" type="submit" value="Logout" />
           </form>
         </div>
@@ -85,12 +85,9 @@
       //websysproject.pratice2 is the 'members' table of the group database
       $sql = "SELECT name FROM lybl.members WHERE email = '".$sender."'";
       $name1 = $mysqli->query($sql);
-      while ($row = $name1->fetch_assoc()) {
-        echo $row['name']."<br>";
-      }
-      echo " has sent the following messages:";
-      echo "<br>";
-      echo "<br>";
+
+      echo "Messages Sent:";
+      echo '<div class="message">';
 
       //websysproject.messenger2 is the 'messenger' table of the group database
       $sqlquery = "SELECT * from lybl.messenger where SenderEmail ='".$sender."' AND ReceiverEmail = '".$receiver."'";
@@ -116,12 +113,16 @@
           echo '"';
           echo $record["Message"];
           echo '"';
-          echo " to ";
-          while ($row = $name1->fetch_assoc()) {
+
+          /*
+          while ($row == $name1->fetch_assoc()) {
             echo $row['name'];
           }
+          */
+
           echo " at ".$record["Time"]." on ".$record["Date"];
           echo "<br>";
+
         }
         $result->free();
       }
@@ -132,19 +133,14 @@
       $name1 = $mysqli->query($sql);
 
       //websysproject.pratice2 is the 'members' table of the group database
-    $sql = "SELECT name FROM lybl.members WHERE email = '".$receiver."'";
+      $sql = "SELECT name FROM lybl.members WHERE email = '".$receiver."'";
       $name2 = $mysqli->query($sql);
 
-      echo "<br>";
-      echo "<br>";
-      while ($row = $name1->fetch_assoc()) {
-        echo $row['name']." ";
-      }
-      echo " has received the following messages from ";
-      while ($row2 = $name2->fetch_assoc()) {
-        echo $row2['name'].":<br>";
-      }
-      echo "<br>";
+
+
+      echo "</div><br/>Messages Received:";
+
+      echo '<div class="message">';
 
       //websysproject.messenger2 is the 'messenger' table of the group database
       $sqlquery2 = "SELECT * from lybl.messenger where SenderEmail ='".$receiver."' AND ReceiverEmail = '".$sender."'";
@@ -168,9 +164,11 @@
             echo $record2["Message"];
             echo '"';
             echo " to ";
+            /*
             while ($row2 = $name2->fetch_assoc()) {
               echo $row2['name'];
             }
+            */
             echo " at ".$record2["Time"]." on ".$record2["Date"];
             echo "<br>";
           }
@@ -181,7 +179,7 @@
       } else {
         die("Error: {$mysqli->errno} : {$mysqli->error}");
       }
-
+      echo "</div>";
 
 
 
