@@ -23,7 +23,7 @@ Young adults from foster system- These people are about to age out if the foster
 
 ## User Interface Instructions:
 1. To run site, a MySQL database must be created in phpMyAdmin 
-2. From main page select a new database from the side branch. Database type should be utf8_general_ci. The data base will be called Members. 
+2. From main page select a new database from the side branch. Database type should be utf8_general_ci. The database will be called Members. 
 3. After the database is created, import the SQL files, located in the SQL folder, by going to the import tab, browse to the SQL file and leave the character set to the default utf-8, then press go.
 4. To run site with php pages, the XAMPP application is needed. To download XAMPP visit: https://www.apachefriends.org/download.html
 5. From there travel to the Apache conf file by right clicking config, then browse Apache following this path: C:\xampp\apache\conf\extra
@@ -43,6 +43,26 @@ Young adults from foster system- These people are about to age out if the foster
    * Windows: `C:\Windows\System32\drivers\etc`
    * Instructions for MAC: https://www.imore.com/how-edit-your-macs-hosts-file-and-why-you-would-want
 8. In file, use an IP address, then create a server using the same name used in the virtual host file, and save.
-9. Run Apache and MySQL from XAMPP and access the website from the server name. 
+9. Run Apache and MySQL from XAMPP and access the website from the server name.
+10. To access the web pages on a browser, type in the server name,LYBL, in the top bar. 
+
+## Site pages 
+
+After landing on the homepage, the user will see a slideshow with images revolving around career and education as well as the website's purpose. The website uses javascript and jQuery to move the slideshow, and the CSS and font are imported from a class package.
+
+
+On the top of the webpage, there is a tab for login and register. When a person selects to create an account and submits, using PHP and SQL, a query will be made, first, check to see if the email is used or not in the member's table.If the 2 password entries match and the entries are valid, the user is entered into the database as a member and depending if they registered as a mentee or mentor entered into the corresponding table. Javascript is used to check if all boxes have been filled. All passwords are hashed to improve security.
+
+In the login tab, the user will enter their email and password. If their information is found in the database, then their profile page will load else an error will be returned. The login does a query that first searches for the email, the uses a verify command to compare the hashed password with the given password. After successfully a login, a session will start, and save the username and ID until the session is terminated by logout.
+
+On the profile page, the user will see the information they registered such as name, location, age, etc. This is displayed using SQL query in PHP finding the information from the ID in session. On the users, on the first login, the image box will be empty. The user has the option to enter a profile image which uses a form, and once submitted the picture location will be saved into the mentor/mentee table, then when the user's page is loaded the photo will appear. 
+
+
+On the profile page, there are links to enter the scholarship page which uses JSON and AJAX to display manually entered scholarships, with the application due date, link to the page, description, and scholarship style.
+
+Another page accessed from the profile page is the mentor/mentee page. The result of the page is dependent on what the user is logged in as, for example, if the user is a mentee the page list all mentors available to them as well as there contact email, which can be used in the final page, the messenger.
+
+From the messenger page the user can enter the email of the addressee submit the form, then PHP is used to input the message in the messenger database, and then the message sent is displayed as well as the messages sent in between the two users.
+
 
 
