@@ -1,3 +1,8 @@
+<!-- file: messenger_2.php -->
+<!-- purpose: allow messaging between two users -->
+
+
+<!-- resource used for help -->
 <!--https://www.youtube.com/watch?v=QS4LN747BXQ-->
 <!-- https://www.youtube.com/watch?v=n35Jn2nP9iU -->
 
@@ -10,6 +15,7 @@
   </style>
   <link rel="stylesheet" href="resources/css/style.css"/>
 </head>
+<!-- keep messages cleared when first going onto the page -->
 <body onload="ClearForm()">
   <div id="navbar" class="white_bg shadow_bottom">
       <div id="logo">

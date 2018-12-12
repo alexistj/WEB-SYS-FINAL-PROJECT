@@ -1,3 +1,6 @@
+<!-- file: mentor_mentee_list.php -->
+<!-- purpose: list the mentors if the user type is a mentee or list the mentees if the user type is a mentor -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -8,6 +11,7 @@
 
 </head>
 <body>
+  <!-- navbar -->
   <div id="navbar" class="white_bg shadow_bottom">
       <div id="logo">
         <div id="logo_image">
@@ -57,7 +61,7 @@
     $row3 = $pstmt->fetchAll();
 
 
-
+    // check if the user is a mentor
     if( $row3[0]['mentor'] == 0){
 
         // Attempt insert query execution
@@ -101,7 +105,7 @@
                   </div>';
         }
     }
-
+    // if the user is a mentee
         else{
 
 

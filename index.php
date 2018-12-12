@@ -10,6 +10,7 @@
     <link href="https://fonts.googleapis.com/css?family=Just+Another+Hand" rel="stylesheet" type="text/css">
   </head>
   <body>
+    <!-- Navbar-> will be consistent in design throughout the website -->
     <div id="navbar" class="white_bg shadow_bottom">
       <div id="logo">
         <div id="logo_image">
@@ -24,6 +25,8 @@
         </div>
       </div>
     </div>
+
+    <!-- modal for a popup login and register box -->
     <div id="modal" class="hidden">
 
         <div class="modal_wrapper">
@@ -33,6 +36,7 @@
               <button  class="modal_register modal_nav_button citrus">Register</button>
               <button  class="modal_close modal_nav_button apricot">&times;</button>
             </div>
+            <!-- form for login -->
             <form class="form" action="login_account_action.php" method="post">
               <div class="form_fields">
               <label for="uname"><b>Email:</b></label>
@@ -56,6 +60,7 @@
               <button  class="modal_register modal_nav_button citrus">Register</button>
               <button  class="modal_close modal_nav_button apricot">&times;</button>
             </div>
+            <!-- form for register -->
             <form class="form" action="create_account_action.php" method="post">
               <div class="form_fields">
               <div class="radios">
@@ -126,6 +131,7 @@
         </span>
       </div>
       <div id="images" class="section blueberry" style="margin-bottom:-17em; position:relative; top:-15em; margin-bottom: 1em">
+      <!-- slideshow images. open a directory with php and switch through the slideshow using javascript -->
       <div id="carousel" class="images_inactive">
         <?php
           $dir = "resources/images/images";
@@ -146,6 +152,7 @@
           }
         ?>
         </div>
+        <!-- mentor spotlight images with polaroid aesthetic -->
         <div id="mentor_images" class="image_inactive">
         <div id="index_board_out">
         <div id="index_board_in">
@@ -183,19 +190,7 @@
       <div id="carousel_images" class="images_button blueberry white_text">Slideshow</div>
       <div id="mentors" class="images_button citrus white_text">Mentors</div>
       </div>
-    <!-- <div id="content">
-      <div class="section blueberry shadow_top">
-	       <div id="index_intro_text" class="text_full">
-	         <h1 class="title apple_core_text remove_margin">Living Your Best Life</h1>
-           <h1 class="subtitle apple_core_text remove_margin">Learn And Develop The Skills To Succeed After Foster Care</h1>
-	                <hr class="hr_large red_hr"/><br/>
-	                 <p class="text white_text">
-	                   Lorem ipsum dolor sit amet, consectetur adipiscing elit. In sit amet risus vel odio vestibulum volutpat. Nam lacus nibh, rhoncus eget egestas in, tempor id justo. Praesent at tristique nisl, sit amet pretium metus. Integer aliquam egestas metus vel aliquam. Morbi sollicitudin magna vel pulvinar aliquet. Nullam ex ligula, pretium a ultrices et, luctus nec lectus. Sed blandit nibh ac condimentum porttitor. Maecenas sed laoreet arcu. Suspendisse condimentum convallis enim at tempus.
-	                   </p>
-	                  </div>
-                  </div>
-
-      </div> -->
+    <!-- general information section for the webpage -->
     <div class="section" style=" position: relative; top: -10em ; margin-bottom: -10em;">
 	     <div class="index_page_content">
 	        <h1 class="title  remove_margin">What Can We Offer</h1><br/>

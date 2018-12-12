@@ -1,9 +1,14 @@
+<!-- file: create_account_action.php -->
+<!-- purpose: allow new users to register an account -->
+
+
 <?php
     @ $db = new mysqli('localhost', 'root', '', 'lybl');
     if ($db->connect_error) {
         echo '<div class="messages">Could not connect to the database. Error: ';
         echo $db->connect_errno . ' - ' . $db->connect_error . '</div>';
     } else {
+        // check if a post request has been made and retrieve the information the user inputted
         if (isset($_POST)) {
             $name = $_POST['username'];
             $age = $_POST['age'];
@@ -14,6 +19,7 @@
             $password_1 = $_POST['password'];
             $password_2  = $_POST['password_2'];
             if ($password_1 == $password_2) {
+                // hashing for the password 
                 $password_1 = password_hash($_POST['password'], PASSWORD_DEFAULT);
                 $sql = "SELECT * FROM `members` WHERE `email` = \"" . $email . "\"";
 

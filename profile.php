@@ -1,3 +1,6 @@
+<!-- file: profile.php -->
+<!-- purpose: show the information of the current user and allow user to upload an image. -->
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -26,13 +29,13 @@
     $userResult = $db->query($sql);
     $row3 = mysqli_fetch_array( $userResult );
 
-
+    // check the type of user, this one checks if the user is a mentor
     if( $row3['mentor'] == 1){
             $sql = 'SELECT * FROM `mentors` WHERE `id` =" ' . $id . '"';
             $userResult = $db->query($sql);
 
             $row3 = mysqli_fetch_array( $userResult );
-
+            // grab the information of the user and save them to variables
             $name=$row3['name'];
             $location=$row3['location'];
             $email=$row3['email'];
@@ -42,6 +45,7 @@
             $occupation= $row3['occupation'];
             $num_mentees= $row3['num_mentees'];
 
+        // output the navbar
         echo '<div id="navbar" class="white_bg shadow_bottom">
             <div id="logo">
               <div id="logo_image">
@@ -68,6 +72,7 @@
           </div>
           <div id="content">';
 
+        // this is the actual profile information for a mentor
         echo '<div id="profile">
                 <div id="profile_left">
                   <img src='. $picture.' width="250em" height="250em" alt="no image found"/>
@@ -96,13 +101,13 @@
 
     }else{
 
-
+      // this is the case in which the user is a mentee
         $sql = "SELECT * FROM `mentees` WHERE `id` = \"" . $id . "\"";
         $userResult = $db->query($sql);
         $row3 = $userResult->fetch_assoc();
 
 
-
+        // save the information relevant for a mentee user
         $name=$row3['name'];
         $location=$row3['location'];
         $email=$row3['email'];
@@ -110,7 +115,7 @@
         $gender=$row3['gender'];
         $age= $row3['age'];
 
-
+        // output the navbar
         echo '<div id="navbar" class="white_bg shadow_bottom">
             <div id="logo">
               <div id="logo_image">
@@ -136,6 +141,7 @@
           </div>
           <div id="content">';
 
+          // output the mentee information 
           echo '<div id="profile">
                   <div id="profile_left">
                     <img src='. $picture.' width="250em" height="250em" alt="no image found"/>

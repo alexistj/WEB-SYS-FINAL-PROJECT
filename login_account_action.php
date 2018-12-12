@@ -1,3 +1,6 @@
+<!-- file: login_account_action.php -->
+<!-- purpose: used to let users login if their information has been saved into the database -->
+
 <?php
     session_start();
 

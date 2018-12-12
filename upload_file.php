@@ -1,3 +1,6 @@
+<!-- file: upload_file.php -->
+<!-- purpose: Used to upload image file for profile images. adds the name of the file onto a database and load the file itself into a photos directory -->
+
 <?php
 
     session_start();

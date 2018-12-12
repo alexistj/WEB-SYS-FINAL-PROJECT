@@ -43,6 +43,8 @@ html, body{
     margin: 0;
 
 }
+
+/* NAVIGATION BAR STYLING */
 #navbar{
     height: 6vh;
     position: fixed;
@@ -110,6 +112,8 @@ html, body{
   opacity: 0.5;
   cursor: pointer;
 }
+
+/* STYLING FOR DIVS, SETS WIDTH AND MARGIN */
 #content{
     width: 100em;
     padding-top: 6vh;
@@ -306,7 +310,8 @@ html, body{
   border-radius: 1em
 }
 
-/* divs/ other elements */
+
+/* STYLING FOR MENTOR SPOTLIGHT IMAGE BOARD */
 #index_intro_text{
     width: 90em;
     padding-bottom: 30em;
@@ -357,10 +362,7 @@ html, body{
     margin-left: 6em;
     margin-right: 6em;
 }
-/* parallax images */
-#index_parallax_0{
-    background-image: url("../images/0.jpg");
-}
+
 /* information section */
 .index_page_content{
     margin: auto;
